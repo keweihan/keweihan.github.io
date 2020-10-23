@@ -1,3 +1,3 @@
 # keweihan.github.io
 
-Kewei Han's personal website
+Kewei Han's personal static website
