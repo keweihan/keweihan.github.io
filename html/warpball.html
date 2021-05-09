@@ -1,111 +1,45 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/css/warpball.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../static/css/index.css">
+<link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <title>
-    Kewei Han Warpball
+    Kewei Han Personal Website
 </title>
 
 <body>
 
-<div class="header" style="margin: 20px;">
-  <h2>Warpball Development Log</h2>
+<div id="center">
+    <div id="name" style="margin: 20px;">
+        <h2>Warpball Development Log</h2>
+    </div>
+  
+    <div id="description" style="margin: 20px;">
+        <p> 
+            Warpball is a personal coding project. The goal is to create a simple arcade game based on an old mobile arcade infinite runner "Warp Rush", with a few original ideas.
+        </p>
+
+        <b>
+            <div class="link">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="link">
+                <a href="./warpball/5-4.html">May 4th 2021</a>
+            </div>
+            
+            <div class="link">
+            <a href="./warpball/5-1.html">May 1st 2021</a>
+            </div>
+        </b>
+
+    </div>
 </div>
 
-<div id="description" style="margin: 20px;">
-    <p> 
-        Warpball is a personal coding project. The goal is to create a simple arcade game based on 
-        an old mobile arcade infinite runner "Warp Rush", with a few original ideas. Sorry for the eyesore of a site! It will be made prettier Soon<sup>TM</sup>.
-    </p>
-    <p> 
-        <b>May 1st 2021</b>
-        <br>
-        Basic prototype of the game. Temporary ramps were placed manually for testing.
-        
-        Strafe movement of the ball (player) is currently controlled
-        directly by player input and uses direct transform. Forward movement is achieved by setting
-        velocity every frame as opposed to transformation so there is natural interaction with ramps
-        and when in the air. 
 
-        <br>
-
-        <video width="696" height="296" autoplay muted loop>
-            <source src="../files/warpball/5-1/may_21_progress.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <br>
-
-        Currently movement looks very artificial in part due to a fixed camera and player. So next step is to add 
-        some movement and delay to the camera when moving left and right for more dynamic visuals. Other things that will probably help
-        are changing angle when in the air, changing FOV depending on velocity, etc.. Movement of the player itself can also be smoothed/delayed for less abrupt movement. 
-        <br>
-    </p>
-    <p> 
-        <b>May 4th 2021</b>
-        <br>
-        <br> 
-        The camera script was modified to add delay in moving to a designated place behind the player. That is, the camera will not
-        follow the player exactly as with before.
-        <br>
-        <br> 
-        I have used <a href="https://docs.unity3d.com/ScriptReference/Vector3.SmoothDamp.html"> SmoothDamp </a> before 
-        to animate 2D collectibles scattering and figured it was also applicable for implementing natural camera
-        movement. If lerp or equivalent were used I expect the camera would not have a "slowdown" process and would appear choppy
-        when side-side following stops.
-        <br> 
-        <br> 
-        Below is what it looks like with camera SmoothDamp, with different paramaters for how fast the camera can move (translating to how
-        closely it can follow the ball).
-
-        <video width="796" height="402" autoplay muted loop>
-            <source src="../files/warpball/5-4/camera_follow.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <video width="796" height="402" autoplay muted loop>
-            <source src="../files/warpball/5-4/camera_follow_2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <br>
-        <br>
-        You can still see the movement of the player itself is still choppy. This is remedied by using SmoothDamp instead of transform to move
-        the player. That is, instead of 
-        <pre> 
-            private void FixedUpdate()
-            {
-                // movementX is player A and D key input
-                transform.Translate(new Vector3(movementX, 0 , 0) * Time.deltaTime * strafeSpeed);
-            }
-        </pre>
-        we have
-        <pre>
-            private void FixedUpdate()
-            {
-                // Update strafe movement based on player input
-                Vector3 targetPosition = transform.position;
-                targetPosition.x += movementX;    
-        
-                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-            }
-        </pre>
-        <br>
-        The results give smooth camera and player movement, making it much more natural and enjoyable to observe and play.
-
-        <video width="796" height="402" autoplay muted loop>
-            <source src="../files/warpball/5-4/camera_follow_3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        
-
-    </p>
-
-    <p>
-        
-    </p>
-</div>
 
 </body>
 </html>

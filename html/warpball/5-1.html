@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../static/css/warpball.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            May 1st 2021
+        </div>
+        
+        <div class = "post-body">
+           <p>
+            Basic prototype of the game. Temporary ramps were placed manually for testing.
+            
+            Strafe movement of the ball (player) is currently controlled
+            directly by player input and uses direct transform. Forward movement is achieved by setting
+            velocity every frame as opposed to transformation so there is natural interaction with ramps
+            and when in the air.
+           </p>
+             
+    
+    
+            <video width="348" height="148" autoplay muted loop>
+                <source src="../../files/warpball/5-1/may_21_progress.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <p>
+                Currently movement looks very artificial in part due to a fixed camera and player. So next step is to add 
+                some movement and delay to the camera when moving left and right for more dynamic visuals. Other things that will probably help
+                are changing angle when in the air, changing FOV depending on velocity, etc.. Movement of the player itself can also be smoothed/delayed for less abrupt movement.
+            </p>
+        </div>
+    </div> 
+</div>

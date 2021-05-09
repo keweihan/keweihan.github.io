@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../static/css/warpball.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/javascript/styles/lightfair.css">
+    <script src="../../static/javascript/highlight.pack.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            May 4th 2021
+        </div>
+        
+        <div class = "post-body">
+           <p>
+            The camera script was modified to add delay in moving to a designated place behind the player. 
+            That is, the camera will not follow the player exactly as with before.
+           </p>
+           
+           <p>
+            I have used SmoothDamp before to animate 2D collectibles scattering and figured it was 
+            also applicable for implementing natural camera movement. If lerp or equivalent were used I expect the camera 
+            would not have a "slowdown" process and would appear choppy when side-side following stops.
+           </p>
+
+           <p>
+            Below is what it looks like with camera SmoothDamp, with different paramaters for how fast the camera can move (translating to how closely it can follow the ball). 
+           </p>
+            <video autoplay="" muted="" loop="" width="398" height="201">
+            <source src="../../files/warpball/5-4/camera_follow.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <video autoplay="" muted="" loop="" width="398" height="201">
+                <source src="../../files/warpball/5-4/camera_follow_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            
+            <p>
+                You can still see the movement of the player itself is still choppy. This is remedied by using SmoothDamp 
+                instead of transform to move the player. That is, instead of 
+            </p>
+
+            
+            <pre><code>
+private void FixedUpdate()
+{
+    // movementX is player A and D key input
+    transform.Translate(new Vector3(movementX, 0 , 0) 
+    * Time.deltaTime * strafeSpeed);
+}
+            </code></pre>
+
+            <p>
+                We have
+            </p>
+
+<pre><code>
+private void FixedUpdate()
+{
+    // Update strafe movement based on player input
+    Vector3 targetPosition = transform.position;
+    targetPosition.x += movementX;    
+
+    transform.position = 
+    Vector3.SmoothDamp(transform.position, targetPosition, 
+                        ref velocity, smoothTime);
+}
+</code></pre>
+
+            <p>
+                The results give smooth camera and player movement, making it much more natural and enjoyable to observe and play. 
+            </p>
+
+            <video autoplay="" muted="" loop="" width="398" height="201">
+                <source src="../../files/warpball/5-4/camera_follow_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+        </div>
+    </div> 
+</div>
