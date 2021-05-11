@@ -3,13 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="../../">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../static/css/warpball.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/javascript/styles/lightfair.css">
-    <script src="../../static/javascript/highlight.pack.js"></script>
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
     <script>hljs.highlightAll();</script>
 </head>
+
+<script>
+    injectCSS();
+</script>
 
 <title>
     Kewei Han Warpball (Date)
@@ -41,12 +47,12 @@
             Below is what it looks like with camera SmoothDamp, with different paramaters for how fast the camera can move (translating to how closely it can follow the ball). 
            </p>
             <video autoplay="" muted="" loop="" width="398" height="201">
-            <source src="../../files/warpball/5-4/camera_follow.mp4" type="video/mp4">
+            <source src="files/warpball/5-4/camera_follow.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <br>
             <video autoplay="" muted="" loop="" width="398" height="201">
-                <source src="../../files/warpball/5-4/camera_follow_2.mp4" type="video/mp4">
+                <source src="files/warpball/5-4/camera_follow_2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             
@@ -87,7 +93,7 @@ private void FixedUpdate()
             </p>
 
             <video autoplay="" muted="" loop="" width="398" height="201">
-                <source src="../../files/warpball/5-4/camera_follow_3.mp4" type="video/mp4">
+                <source src="files/warpball/5-4/camera_follow_3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
 

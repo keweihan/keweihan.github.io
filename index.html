@@ -2,7 +2,7 @@
 <html>
 
 
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./static/css/index.css">
@@ -18,7 +18,7 @@
 <body>
 
 <div id="flex-wrapper"> 
-
+    <div id = "bar"></div>
     <div id="link-hub">
         <div id="name" style="margin: 20px;">
             <h2>Kevin (Kewei) Han</h2>
@@ -35,7 +35,7 @@
             
             
             <b>
-                <div class="link">
+                <!-- <div class="link">
                     <a href="./files/Resume.pdf">Resume</a>
                 </div>
                 
@@ -54,8 +54,26 @@
                 <div class="link">
                     <a href="https://devpost.com/software/tehuantepec">YHacks 2019 Project</a>
                 </div>
+                 -->
+
+                <button onclick="openURL('./files/Resume.pdf')" class="link">Resume</button>
+
+                <div class="link-external">
+                    <a href="https://github.com/keweihan" style="cursor: default;">Github</a>
+                    <span class="tooltiptext">Direct Link</span>
+                </div>
+
+                <button onclick="openURL('./html/warpball.html')" class="link">Warpball</button>
                 
-                <!-- <button onclick="openURL('./html/warpball.html')" class="link">Click Me</button> -->
+                <div class="link">
+                    <a href="https://wolverinesoft-studio.itch.io/circuitry" style="cursor: default;">WolverineSoft Circuitry</a>
+                </div>
+
+                <div class="link-external">
+                    <a href="https://devpost.com/software/tehuantepec" style="cursor: default;">YHacks 2019 Project</a>
+                    <span class="tooltiptext">Direct Link</span>
+                </div>
+
             </b>
 
         </div>

@@ -8,7 +8,7 @@ video {
 .link {
     background-color: white;
     border: none;
-    color: black;
+    color: rgb(83, 83, 83);
     padding: 8px 1px;
     text-align: left;
     font-size: 14px;
@@ -21,7 +21,52 @@ video {
     background-color: #ddd;
     color: white;
     width: 100%;
+    cursor: default;
 }
+
+.link:focus {
+  transition: 0.3s;
+  width: 100%;
+  background-color:rgb(168, 168, 168);
+  color: white;
+}
+
+.link-external {
+  cursor: default;
+  background-color: white;
+  border: none;
+  color: rgb(83, 83, 83);
+  padding: 8px 1px;
+  text-align: left;
+  font-size: 14px;
+  margin: 1px 1px;
+  transition: 0.3s;
+  width: 143px;
+}
+
+.link-external:hover {
+  cursor: default;
+  background-color: #ddd;
+  color: black;
+  width: 100%;
+}
+
+.link-external .tooltiptext {
+  opacity: 0;
+  width: 120px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  transition: 0.2s;
+
+  transform: translateX(-30px);
+}
+
+/* TODO */
+/* .link-external:hover .tooltiptext {
+  opacity: 100;
+} */
 
 body {
     background-color: white;

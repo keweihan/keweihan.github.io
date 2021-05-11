@@ -14,14 +14,31 @@ function openURL(url)
 {
     Velocity(document.getElementById("browser-wrapper"), 
     {
-        width: "90%" 
-    }, 
+        width: "60%" 
+    },
     { 
-        duration: 1000, 
+        duration: 750, 
+        easing: [.17,.67,.22,.99],
         begin: insertBrowser, 
         complete: function setURL(){
             document.getElementById("browser").src = url;
-        }
-    });
+        },
+    }
+    );
+
+    // Make link smaller
+    Velocity(document.getElementById("link-hub"), 
+    {
+        width: "20%" 
+    },
+    { 
+        duration: 750, 
+        easing: [.17,.67,.22,.99],
+        begin: insertBrowser, 
+        complete: function setURL(){
+            document.getElementById("browser").src = url;
+        },
+    }
+    );
     document.getElementById("browser").src = url;   
 }
