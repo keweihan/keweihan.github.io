@@ -17,7 +17,6 @@
   }
 
 video {
-    width: 80% !important;
     height: auto !important;
 }
 
@@ -26,6 +25,10 @@ video {
     #center {
         width: 90%;
     }
+    
+    video {
+        width: 100%;
+    }
 }
 
 
@@ -33,5 +36,9 @@ video {
 @media only screen and (min-width: 1066px) {
     #center {
         width: 40%;
+    }
+
+    video {
+        width: 80%;
     }
 }
