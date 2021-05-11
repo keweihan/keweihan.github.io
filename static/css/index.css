@@ -24,11 +24,15 @@
 
 #link-hub {
     font-family: Arial, Helvetica, sans-serif;
-    
     padding-left: 20px;
     width: 450px;
     background-color: white;
 }
+
+#link-list {
+    display: flex;
+    flex-direction: column;
+}   
 
 #bar {
     width: 2px;
