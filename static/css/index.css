@@ -18,21 +18,52 @@
     display: flex;
     margin: auto;
     padding-top: 70px;
-    width: 80%;
+    width: 100%;
     justify-content: center;
 }
 
 #link-hub {
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 20px;
-    width: 450px;
     background-color: white;
 }
 
-#link-list {
+#link-list-desktop {
     display: flex;
     flex-direction: column;
-}   
+}
+
+#link-list-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Small screen */
+@media only screen and (max-width: 768px) {
+    #link-list-desktop {
+        display: none;
+    }
+    
+    #link-hub {
+        width: 90vw !important;
+    }
+
+    #browser-wrapper {
+        display: none;
+    }
+  }
+
+
+/* Large screen */
+@media only screen and (min-width: 769px) {
+    #link-list-mobile {
+        display: none;
+    }
+
+    #link-hub {
+        width: 450px;
+    }
+}
 
 #bar {
     width: 2px;
