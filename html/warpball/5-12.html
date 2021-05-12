@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../../">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            May 12th 2021
+        </div>
+        
+        <div class = "post-body">
+            <br>
+           Changes: 
+           <br>
+           <pre>
+- Now using Cinemachine instead of custom camera script to follow player movement
+- Added basic collectible and ramp prefabs
+- Added boost system where player increases speed upon passing through ramp and collecting collectible
+- Added camera shake on boosting and landing
+           </pre>
+           
+           <video autoplay muted loop playsinline>
+            <source src="files/warpball/5-12/movie_010.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+           <p>
+            The bit of work done since the last log involves implementing more camera effects to make gameplay feel more dynamic.
+           </p>
+           
+           <p>
+                I discovered Cinemachine (a Unity package) and using that over a custom script gives 
+                a lot more customizability and also allows vertical camera damping, among many other 
+                customizable traits. It's overall a much better camera controller than I could ever 
+                write in a reasonable amount of time and fits the purpose very well too.
+           </p>
+            
+            
+            <p>
+                Another change was adding a boost function that increases player speed. This function 
+                would be invoked on collecting collectibles and passing through gates,
+                same as in Warp Rush (the inspiration source). This also provides the opportunity for 
+                more camera movement. Specifically, increase in FOV based on player 
+                speed and camera shake on boosting. 
+            </p>
+            
+
+            <p>
+                I initially tried to implement camera shake as part of a camera controller script alongside 
+                the previous custom camera controller (i.e. not Cinemachine), but it turns out it's not at all
+                straightforward to write a decent camera shake script for a camera that's constantly moving and 
+                subject to SmoothDamp lerping functions. Cinemachine was the solution as it comes with the ability
+                to do good camera shake on top of being a generally great and simple camera package. 
+            </p>
+            
+            <p>
+                I also made temporary basic collectible and ramp prefabs so I can see the product of adding
+                these camera effects. 
+            </p>
+
+            <p>
+                There's still a few things that can be done - such as using camera noise in Cinemachine, having 
+                different intensity camera shakes depending on time spent off the floor, making the FOV changes
+                more noticeable while capping it etc., but for now I'm happy with the way it is and want to move
+                to simple environment generation to make this endless so it can start to have some traits of an actual game.
+            </p>
+
+        </div>
+    </div> 
+</div>
