@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            May 12th 2021
+        </div>
+        
+        <div class = "post-body">
+            <br>
+           Changes: 
+           <br>
+           <pre>
+- Added basic framework for generating ramps, collectibles and obstacles during runtime. 
+    - Generate objects zone by zone as player moves forward 
+      (where "zone" coordinates are defined by user)
+    - Customizable number of objects per zone
+    - Customizable minimum distance between generated objects 
+      (to prevent clipping and customize spacing)
+    - Specify zone to generate objects by changing dimensions of gameObject 
+      (which is visualized) as opposed to using public variables
+           </pre>
+           
+           <p>
+            Wrote a very basic environment generation script that allows an 
+            unending plane of ramps, collectibles, obstacles, or whatever prefab the designer chooses.
+            Currently you can see objects popping into existence, but this can be masked by changing 
+            camera render distance and/or adding post-processing fog.
+            </p>
+
+           <video autoplay muted loop playsinline>
+            <source src="files/warpball/5-15/5-15summary.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            
+            <p>
+                Boring details below:
+            </p>
+            <p>
+                This uses a generation "zone", which is visualized by the 
+                green rectangle in the picture below. (Note white is camera field of vision)
+            </p>
+            
+            <img src="files/warpball/5-15/gen-zone.png" alt="Generation Zone screenshot">
+
+            <p> 
+                This zone will always remain in the same position relative to the player. Once the zone reaches a completely
+                empty area (when the beginning of the zone passes the end of the previous zone), the script will 
+                run functions "GenerateObjects()". 
+            </p>
+
+            <p>
+                GenerateObjects() will, for each to-be-generated object, do the following:
+                <div style="width: 80%; margin: auto; font-size: 12;">
+
+                
+                    <p>
+                        - Use Mathf.rand to generate a position within the boundaries of the zone to place the new object. 
+                    </p>
+                    
+                    <p>
+                        - Check that the randomly generated position inside the zone is far enough away from every other generated object using
+                        a temporary list of positions
+                    </p>
+                    
+
+                    <p>
+                        - If position is valid this position to a temporary list of positions of objects generated within the zone. 
+                    </p>
+                    
+                    <p>
+                        - If it is not valid the function will rerun Mathf.run until a valid position is found OR a maximum number of tries has been reached.
+                    </p>
+                </div>
+            </p>
+            
+            <p>
+                This way there will be no clipping of objects and the designer can specify how spaced out they want objects to be.
+            </p>
+
+            <p>
+                I also thought it was pretty neat idea to, instead of using public variables to specify boundaries of the zone, using 
+                a 3D rectangle with rendering and collisions turned off as a visualizer of the zone, and using script to convert it
+                to a boundary in numbers. Should make it much easier to make changes and tweaks in the future.
+            </p>
+
+            <p>
+                In the future this system can be improved by adding rounding positions to 5s or 10s so there's more order to generation,
+                but for now I want to move on to making some skeleton UI and game mechanics and a game manager.
+            </p>
+
+            <p>
+                Also made a version of the project to use HDRP instead of URP for rendering to see some cool reflections. Not sure which one
+                to use yet since I'm not sure if such a simple game warrants high quailty rendering systems.
+            </p>
+
+            <video autoplay muted loop playsinline>
+            <source src="files/warpball/5-15/hdrpversion.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+    </div> 
+</div>

@@ -16,9 +16,17 @@
     background-color: white;
   }
 
-video {
+video, img {
     height: auto !important;
+    border-radius: 10px;
+
+    /* Center images and videos */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
 
 /* Small screen */
 @media only screen and (max-width: 1065px) {
@@ -26,7 +34,7 @@ video {
         width: 90%;
     }
     
-    video {
+    video, img {
         width: 100%;
     }
 }
@@ -38,7 +46,7 @@ video {
         width: 40%;
     }
 
-    video {
+    video, img {
         width: 80%;
     }
 }
