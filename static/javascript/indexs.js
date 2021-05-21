@@ -12,6 +12,7 @@ function insertBrowser()
 
 function openURL(url)
 {
+    // Insert iframe browser and make wider 
     Velocity(document.getElementById("browser-wrapper"), 
     {
         width: "60%" 
