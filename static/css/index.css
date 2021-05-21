@@ -5,6 +5,7 @@
     width: 0%;
     height: 85vh;
     overflow: hidden;
+    background: url(files/loading.gif) center center no-repeat;
 }
 
 #browser {
