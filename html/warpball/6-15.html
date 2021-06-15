@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            May 12th 2021
+        </div>
+        
+        <div class = "post-body">
+            <br>
+           Changes: 
+           <br>
+           <pre>
+- Added square obstacles
+    - Different triggers for each face. Contact with face facing player will send to menu 
+- Added basic menu
+- Added basic manual boost system and UI 
+    - Boost with spacebar
+    - Cannot boost if no boost charge
+    - Get boost charge by collecting yellow cubes
+    - Boost charge displayed at bottom of screen
+- Obstacles now despawn when player has passed them'
+- Obstacles now spawn in round numbers (adjustable - i.e. every 5 units)
+- Added basic GameManager (future TODO - move variables to be stored here)
+- Floor is now infinite
+           </pre>
+           
+           <video autoplay muted loop playsinline>
+            <source src="files/warpball/6-15/6-15summary.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+           
+            
+        </div>
+    </div> 
+</div>
