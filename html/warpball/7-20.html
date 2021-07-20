@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            July 20th 2021
+        </div>
+        
+        <div class = "post-body">
+            <br>
+           Changes: 
+           <br>
+           <pre>
+- Added out of boost indicator flashes (not shown)
+- Added ability to strafe boost with keys Q/E
+- Added basic UI to display score, current level, score registration on ramp
+    - Animated with 3rd party library LeanTween
+- Added scoring system and difficulty/level scaling with time
+    - Uses a general GameManager script
+    - Collectible scoring 
+        - Score value of collectible increases with each collect
+            - introduces reward in risk/reward of chaining multiple collectibles
+        - Collecting collectible increases player speed until ramp
+            - introduces risk in risk/reward of chaining multiple collectibles
+        - Value and speed increases from collectible resets on ramp
+        - Score collected from collectibles registered on ramp
+    - Level/Difficulty scaling
+        - Speed permenantly increases with each level 
+        - Number of obstacles generated permenantly increases with each level
+        - Level increases by 1 every 15 seconds (adjustable)
+        - incentivizes risking for reward (before levels get inevitably too difficult)
+        - from Tetris 
+- Added basic player model (temporary?) with script based animations
+    - With particle effects
+    - Tilting animation on moving left/right
+    - Tilting up/down animation based on movement direction during flight
+    - Hovering up/down animation  
+    - Rolling animation on strafe boost
+- Minor visual tweaks
+    - floor color
+    - post processing effects (bloom, distortion)
+           </pre>
+           
+           <video autoplay muted loop playsinline>
+            <source src="files/warpball/7-20/7-20summary.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+           
+            
+        </div>
+    </div> 
+</div>
