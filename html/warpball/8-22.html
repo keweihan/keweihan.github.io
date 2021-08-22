@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Warpball (Date)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Warpball Development Log</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            August 22nd 2021
+        </div>
+        
+        <div class = "post-body">
+            <br>
+           Changes: 
+           <br>
+           <pre>
+- Added level indicator at top of screen (Game)
+- Game Menu
+    - Reworked Main Menu scene to have 3D component
+        - Camera on Dolly track rotating around player model
+    - Skybox added
+    - Blurred UI components
+    - History/Statistics
+        - Basic working run history/statistics system (uses PlayerPrefs as persistent storage)
+            - persistent storage scripting system/interface 
+        - history and stats window
+            - sort by different categories in history (time, score, level)
+        - temporary transition animations (script animations)
+- Game Over Menu
+    - Basic Game Over menu implemented
+        - Incrementing score display (towards final score)
+    - New game/Return to menu button
+    - Script animated instantiate animation
+- Game appearance
+    - UI separated to different camera
+        - UI specific post processing added (Chromatic abberation, lens distortion)
+    - Runtime post processing modification system added 
+        - Boost post processing effects
+    - Added space skybox (free from unity asset store) 
+    - Adjusted collectible and ramp prefabs 
+        - Point lights added to collectible prefabs 
+        - Added light to ramp prefab
+    - Added fog
+- Gameplay 
+    - Boost now costs 100% of boost charge
+        - Allows players to break obstacles instead of crashing during boost time
+        - activates only when (space bar) is pressed on 100% boost charge
+    - Added hold boost - activates when pressed on < 100% boost charge
+        - Gives player more speed, but adds points during hold boost as reward
+    - Strafe boost now costs 0
+- Performance
+    - Environment generation zone size decreased dramatically
+        - ↑ frequency of environment generation frames 
+        - ↓ simultaneous gameobjects (~1500 -> ~400)
+        - ↓ max frame time (~70ms -> ~30ms)
+    - Environment generation now occurs over multiple frames (as opposed to over a single frame)
+        - one frame per type of object
+        - lag spike less apparent
+    - disabled v-sync
+- Other
+    - Moved all boost script logic in player controller to boost controller
+    - simplified boost logics - use LeanTween over custom SmoothDamp logic
+    - added debug display in-game
+        - fps counter, game object number counter
+    - player velocity now preserves while inAir
+        - player velocity gradually slows after landing (instead of instantly slowing)
+- Bugs
+    - fixed inconsistent main menu lighting - ref: 
+      (https://forum.unity.com/threads/loading-scene-additively-causes-change-in-lighting.511566/)
+    - fixed end game menu not triggerin consistently
+    - fixed player moving even after crash
+           </pre>
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/warpball/8-22/8-22gameUI.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        New game Menu UI - (see 6-15 for old temp UI) 
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay muted loop playsinline>
+                        <source src="files/warpball/8-22/8-22smashobstacle.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        New boost mechanics
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <video autoplay muted loop playsinline>
+                    <source src="files/warpball/8-22/8-22general.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        General gameplay
+                    </figcaption>
+                </figure>
+        </div>
+    </div> 
+</div>
