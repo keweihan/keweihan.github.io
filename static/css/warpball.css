@@ -17,6 +17,7 @@
   }
 
 video, img {
+    width: 100px !important;
     height: auto !important;
     border-radius: 10px;
 

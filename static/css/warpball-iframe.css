@@ -14,3 +14,21 @@
     width: 100%;
     background-color: white;
 }
+
+video, img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+    /* Center images and videos */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figcaption {
+    color: gray;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+}
