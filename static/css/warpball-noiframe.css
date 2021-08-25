@@ -17,7 +17,7 @@
   }
 
 video, img {
-    width: 100px !important;
+    width: 100% !important;
     height: auto !important;
     border-radius: 10px;
 
@@ -27,7 +27,12 @@ video, img {
     margin-right: auto;
 }
 
-
+figcaption {
+    color: gray;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+}
 
 /* Small screen */
 @media only screen and (max-width: 1065px) {
