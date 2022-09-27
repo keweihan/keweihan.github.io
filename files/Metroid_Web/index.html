@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=800 height=750></canvas>
+      <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -56,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Metroid_Web.loader.js";
+      var loaderUrl = buildUrl + "/SubmitGoldHTML.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Metroid_Web.data.gz",
-        frameworkUrl: buildUrl + "/Metroid_Web.framework.js.gz",
-        codeUrl: buildUrl + "/Metroid_Web.wasm.gz",
+        dataUrl: buildUrl + "/SubmitGoldHTML.data.br",
+        frameworkUrl: buildUrl + "/SubmitGoldHTML.framework.js.br",
+        codeUrl: buildUrl + "/SubmitGoldHTML.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "eecs-494-p1-hankevin-zhouziy",
@@ -93,8 +93,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "800px";
-        canvas.style.height = "750px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       loadingBar.style.display = "block";
