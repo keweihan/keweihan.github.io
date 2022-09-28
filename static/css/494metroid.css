@@ -1,0 +1,11 @@
+.post-date {
+  font-style: italic;
+}
+
+figcaption {
+  color: gray;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
