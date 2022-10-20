@@ -106,11 +106,11 @@ body {
     text-decoration: none;
   }
 
-  #headerimage {
+  .headerimage {
     position : relative;
   }
   
-  #headerimage:after {
+  .headerimage:after {
     content  : "";
     position : absolute;
     z-index  : 1;
