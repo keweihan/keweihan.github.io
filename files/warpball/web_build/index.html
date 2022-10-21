@@ -6,24 +6,9 @@
     <title>Unity WebGL Player | Warp Ball</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="stylesheet" href="/static/css/style.css">
   </head>
   <body>
-    <div style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
-      <div width="960" style="text-align: left">
-        </div>
-        A, D: Strafe
-        <br>
-        Q, E: dash left and right, 
-        <br> 
-        Space: Boost. 
-        <br>
-        Avoid obstacles, collect boost. Get full boost meter to gain a powerful boost to smash through obstacles. 
-      </div>
-    </div>
-    
     <div id="unity-container" class="unity-desktop">
-      
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -71,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WEB-BUILD-2022-10-20.loader.js";
+      var loaderUrl = buildUrl + "/WEB-BUILD-2.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WEB-BUILD-2022-10-20.data",
-        frameworkUrl: buildUrl + "/WEB-BUILD-2022-10-20.framework.js",
-        codeUrl: buildUrl + "/WEB-BUILD-2022-10-20.wasm",
+        dataUrl: buildUrl + "/WEB-BUILD-2.data",
+        frameworkUrl: buildUrl + "/WEB-BUILD-2.framework.js",
+        codeUrl: buildUrl + "/WEB-BUILD-2.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "KeweiHan",
         productName: "Warp Ball",
