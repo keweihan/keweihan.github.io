@@ -71,3 +71,22 @@
     background-color: rgb(201, 201, 201);
     border-radius: 10px;
 }
+
+
+
+
+/* @media (prefers-color-scheme: dark) {
+    #link-hub {
+        background-color: rgb(32, 32, 32);
+        color: wheat;
+    }
+    
+    #flex-wrapper {
+        background-color: rgb(32, 32, 32);
+    }
+    
+    html {
+        background-color: rgb(32, 32, 32);
+    }
+
+} */
