@@ -1,3 +1,14 @@
+.dropdown_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none
+}
+
+.dropdown_button:hover .dropdown_content {
+    display: block;
+}
+
 #browser-wrapper {
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px 0;
@@ -29,12 +40,11 @@
     background-color: white;
 }
 
-#link-list-desktop {
-    display: flex;
-    flex-direction: column;
+.link-group {
+    padding-left: 20px;
 }
 
-#link-list-mobile {
+#link-list-desktop, #link-list-mobile, .link-group {
     display: flex;
     flex-direction: column;
 }

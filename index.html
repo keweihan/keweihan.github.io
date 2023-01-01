@@ -5,18 +5,27 @@
 <head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="stylesheet" href="./static/css/style.css">
+
+    <!-- JS -->
     <script src="./static/javascript/velocity.min.js"></script>
     <script src="./static/javascript/indexs.js"></script>
+    <script src='scripts/jquery.min.js'></script>
     <title> Kewei Han Personal Website </title>
 </head>
 
 <body>
-
 <div id="flex-wrapper"> 
     <div id = "bar"></div>
     <div id="link-hub">
+        
+        <div id="profile-photo">
+            <img src="files/profile.jpg" style="width:50%; border-radius: 50%;">
+        </div>
+
         <div id="name" style="margin: 20px;">
             <h2>Kevin (Kewei) Han</h2>
         </div>
@@ -32,27 +41,29 @@
             <div id="link-list-desktop">
                 <button onclick="openURL('./files/Resume.pdf')" class="link">Resume</button>
 
-                <!-- <div class="link-external">
-                    <a href="https://github.com/keweihan" style="cursor: default;">Github</a>
-                    <span class="tooltiptext">Direct Link</span>
-                </div> -->
+                <div class="link-external">
+                    <a href="https://www.linkedin.com/in/kewei-han-546014157/">LinkedIn</a>
+                    <!-- <span class="tooltiptext">Direct Link</span> -->
+                </div>
                 
                 <hr> 
-                <button onclick="openURL('./html/494DesktopDefender.html')" class="link">494 Desktop Defender</button>
+                
+                <button class="link">Projects          </button>
+                <div class="link-group">
+                    <button onclick="openURL('./html/494DesktopDefender.html')" class="link">494 Desktop Defender   </button>
+                    <button onclick="openURL('./html/494p2.html')"              class="link">494 QUBE               </button>
+                    <button onclick="openURL('./html/494metroid.html')"         class="link">494 Metroid            </button>
+                    <button onclick="openURL('./html/warpball.html')"           class="link">Warpball               </button>
+                    <button onclick="openURL('./html/circuitry.html')"          class="link">WolverineSoft Circuitry</button>
+                </div>
+                
+                <hr> 
 
-                <button onclick="openURL('./html/494p2.html')" class="link">494 QUBE</button>
-
-                <button onclick="openURL('./html/494metroid.html')" class="link">494 Metroid</button>
-
-                <button onclick="openURL('./html/warpball.html')" class="link">Warpball</button>
-
-                <button onclick="openURL('./html/circuitry.html')" class="link">WolverineSoft Circuitry</button>
-
-                <button onclick="openURL('./html/insta485Demo.html')" class="link">Insta485</button>
+                <button onclick="openURL('./html/insta485Demo.html')" class="link">Insta485 </button>
 
                 <div class="link-external">
                     <a href="https://devpost.com/software/tehuantepec" style="cursor: default;">YHacks 2019 Project</a>
-                    <span class="tooltiptext">Direct Link</span>
+                    <!-- <span class="tooltiptext">Direct Link</span> -->
                 </div>
             </div>
             

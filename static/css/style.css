@@ -9,7 +9,7 @@ video {
   border-radius: 10px;
 }
 
-.link {
+.link, .link-external {
     background-color: white;
     border: none;
     color: rgb(83, 83, 83);
@@ -17,14 +17,15 @@ video {
     text-align: left;
     font-size: 14px;
     margin: 1px 1px;
+    text-indent: 5px;
     transition: 0.3s;
-    width: 143px;
+    width: 100%;
 }
 
-.link:hover {
+.link:hover, .link-external:hover {
     background-color: #ddd;
     color: white;
-    width: 100% !important;
+    width: 200px !important;
     cursor: default;
 }
 
@@ -35,27 +36,11 @@ video {
   color: white;
 }
 
-.link-external {
-  cursor: default;
-  background-color: white;
-  border: none;
-  color: rgb(83, 83, 83);
-  padding: 8px 1px;
-  text-align: left;
-  font-size: 14px;
-  margin: 1px 1px;
-  transition: 0.3s;
-  width: 143px;
+.link-external:hover, .link-external {
+  cursor: pointer;
 }
 
-.link-external:hover {
-  cursor: default;
-  background-color: #ddd;
-  color: black;
-  width: 100%;
-}
-
-.link-external .tooltiptext {
+/* .link-external .tooltiptext {
   opacity: 0;
   width: 120px;
   color: #fff;
@@ -65,7 +50,7 @@ video {
   transition: 0.2s;
 
   transform: translateX(-30px);
-}
+} */
 
 /* TODO */
 /* .link-external:hover .tooltiptext {

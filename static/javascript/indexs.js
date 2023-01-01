@@ -10,6 +10,7 @@ function insertBrowser()
 }
 
 
+// OnClick() function
 function openURL(url)
 {
     // Insert iframe browser and make wider 
