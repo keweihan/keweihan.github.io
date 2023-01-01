@@ -40,6 +40,10 @@ video {
   cursor: pointer;
 }
 
+#center {
+  justify-content: center;
+}
+
 /* .link-external .tooltiptext {
   opacity: 0;
   width: 120px;
