@@ -41,8 +41,35 @@ video {
 }
 
 #center {
-  justify-content: center;
+  align-content: center;
 }
+
+.clips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.clip-wrapper {
+  width: 90%;
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.clip-caption {
+  padding: 6px;
+  color: gray;
+  font-style: italic;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+
 
 /* .link-external .tooltiptext {
   opacity: 0;
