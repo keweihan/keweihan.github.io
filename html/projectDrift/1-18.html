@@ -33,13 +33,13 @@
         
         <div class = "post-body">
            <br>
-                Welcome to my first blog post on my contributions to WolverineSoft in Winter 2023!
-                For the next few posts I will show what I have been up to in contributing to WSS.
+                Welcome to my first blog post on my contributions to WolverineSoft Studios in Winter 2023.
+                The coming posts will show what I have been up to in contributing to WSS.
                 <br>
                 <br>
-                For the last two weeks we have determined our roles as programmers. I will be helping
+                For the last two weeks we have determined our roles as programmers. I have been helping
                 the player squad in implementing player/combat ability systems. Below are some of the
-                tasks I have accomplished for this sprint. 
+                tasks I have accomplished for this sprint.      
 
             <h3>
                 Checkpoint System
@@ -87,27 +87,28 @@
             <h3>
                 Weapons System improvements
             </h3>
-                Another one of my tasks was to improve the weapons system backend such that it allows for 
+                Another one of my tasks was to improve/change the weapons system backend such that it allows for 
                 limiting fire rate and freezes character movement for the duration of firing a gun. I was also 
                 responsible for implementing the ability to swap between weapons.
                 <br>
                 <br>
-                This was a task where I spent a long time figuring out how best to implement it. To
-                implement it without regards of scalability and legibility would be trivial; a first iteration
-                implemented it by starting a coroutine that sets a "groundSpeed" variable controlling player
+                This was a task where I spent a long time figuring out how best to implement it. I implemented the
+                behavior successfully multiple times, but the tricky part was figuring out which was the most inline
+                with the established practices of the codebase. To implement it without regards of scalability and legibility 
+                was trivial; a first iteration implemented it by starting a coroutine that sets a "groundSpeed" variable controlling player
                 speed to 0 for a given time.
                 <br>
                 <br>
                 This worked, but I knew this didn't make a lot sense in a larger project as it is not clear
                 when the player is in this state of not being able to walk which may be cause for future 
-                confusions. After spending time reading documentation and the codebase I found that the game 
+                confusions. After spending around two hours reading documentation and the codebase I found that the game 
                 uses a statemachine pattern to define player movement behavior. Each state is implemented as 
                 a "Subcontroller" which controls player movement. 
                 <br>
                 <br> 
                 I ended up defining a new state in which the player is shooting. This is a state where the 
                 player cannot move, and is arrived at when the player uses the shoot input. It also hands control back 
-                after the cooldown time of the pistol passes.
+                after the cooldown time of the pistol passes. 
                 <br>
                 <br>
                 <figure>
@@ -199,6 +200,21 @@
                 <br>
                 Time ~2.5hr
             <h3>
+                Overview
+            </h3>
+            Overall, tasks for me this week felt more focused on establishing infrastructure
+            to allow for new features and less on the features themselves. As a result I ended up taking more 
+            time to read Project Drift documentation and the code itself to understand the codebase and the programming patterns it 
+            employs. My hope was to write code as legible and consistent as possible with the codebase in recognition
+            that a 25 person project has higher standards with regards to code quality than I am used to with personal game projects. 
+            <br>
+            <br>
+            I found these two weeks to have been good practice in utilizing and implementing inheritance in the 
+            context of Unity (for example, learning that coroutines cannot be made directly in class instances that don't directtly inherit from Monobehavior),
+            as well as getting acquainted with some of the features of C# that I have not encountered
+            before (such as get and set methods). It was also a nice introduction to using ScriptableObjects and learning 
+            about its uses in the process of using it to implement some of the requested features (such as a buff system).
+            <h3>
                 Hours Breakdown:
             </h3>
             <br>
@@ -206,9 +222,8 @@
                 3hr Checkpoint System <br>
                 6hr Weapons Systems <br>
                 2.5hr Buff System <br>
-                15.5hr Total<br>
-            
-
+                1hr communication with lead <br>
+                16.5hr Total<br>
         </div>
     </div> 
 </div>
