@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Project Drift (2023-2-5)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Project Drift Programmer Development Log: Sprint 1 Feature-Add</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            Feburary 5th, 2023
+        </div>
+        
+        <div class = "post-body">
+           <br>
+                Welcome to my first blog post on my contributions to WolverineSoft Studios in Winter 2023.
+                The coming posts will show what I have been up to in contributing to WSS.
+                <br>
+                <br>
+                For the last two weeks we have determined our roles as programmers. I have been helping
+                the player squad in implementing player/combat ability systems. Below are some of the
+                tasks I have accomplished for this sprint.      
+
+            <h3>
+                Checkpoint System
+            </h3>
+                My first task was to implement a checkpoint system that allows the player to respawn
+                in any given zone. It wasn't immediately clear to me how and where I would store the information, and where 
+                the centralized object that stores last encountered checkpoint should be. 
+                <br>
+                <br>
+                It took a while of reading through the suggested scripts and thinking for me to arrive on 
+                a solution that I think makes the most sense based on infrastructure and conventions already
+                in place in the codebase.  
+                <br>
+                <br>
+                I used a SaveSystem that was already written allowing storage of the last checkpoint location.
+                through get and set methods. This way a variable (such as a vector) can be defined to have its 
+                storage be in a file on disk so its persistent across scene reloads. This variable is saved 
+                as part of a new component of the player that handles death and respawning (which would respawn 
+                player at its previous checkpoint). The checkpoint object itself is a prefab that has a new script 
+                which renders its zone in the editor as well as the specific position it would respawn at.
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/drift/Checkpoint.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Checkpoint system : simply drag object into the scene and it works
+                    </figcaption>
+                </figure>
+                <br>
+                <br>
+                In trying to use this system I encountered a few issues that I have not seen before in my
+                experience with Unity. One of which stemmed from a Vector3 not being serializable to the SaveSystem,
+                which I figured out after using the debugger for a while. I worked around this by creating a 
+                class that stores a information about a vector through floats and has a method to 
+                retrieve this in the form of a vector. This allows it to be stored using the provided system
+                <br>
+                <br>
+                Overall this was not a difficult task in itself and could've been accomplished quicker,
+                but being new to the codebase I did take a while figuring out how the save system works and 
+                becoming more familiar with the codebase in general.
+                <br>
+                <br>
+                Time ~3hr
+            <h3>
+                Weapons System improvements
+            </h3>
+                Another one of my tasks was to improve/change the weapons system backend such that it allows for 
+                limiting fire rate and freezes character movement for the duration of firing a gun. I was also 
+                responsible for implementing the ability to swap between weapons.
+                <br>
+                <br>
+                This was a task where I spent a long time figuring out how best to implement it. I implemented the
+                behavior successfully multiple times, but the tricky part was figuring out which was the most inline
+                with the established practices of the codebase. To implement it without regards of scalability and legibility 
+                was trivial; a first iteration implemented it by starting a coroutine that sets a "groundSpeed" variable controlling player
+                speed to 0 for a given time.
+                <br>
+                <br>
+                This worked, but I knew this didn't make a lot sense in a larger project as it is not clear
+                when the player is in this state of not being able to walk which may be cause for future 
+                confusions. After spending around two hours reading documentation and the codebase I found that the game 
+                uses a statemachine pattern to define player movement behavior. Each state is implemented as 
+                a "Subcontroller" which controls player movement. 
+                <br>
+                <br> 
+                I ended up defining a new state in which the player is shooting. This is a state where the 
+                player cannot move, and is arrived at when the player uses the shoot input. It also hands control back 
+                after the cooldown time of the pistol passes. 
+                <br>
+                <br>
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/drift/GunSwitch.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Gun switching and movement stop on shoot
+                    </figcaption>
+                </figure>
+                For the weapons to be able to swap, I defined a gameObject describing the current object the player has 
+                equipped, as well as a list of weapons the player can swap in addition to a SwapWeapon function. I also spent some 
+                time changing existing save functionality to save this list persistently and load it from disk on start.
+                This was less straighforward as there is no way to write GameObjects to disk, so strings denoting a 
+                GameObject in combination with a dictionary of strings to GameObject were used instead to accomplish this.
+                <br>
+                <br>
+                In anticipation of having to eventually display gun sprites, I changed the system to use 
+                GameObjects for guns, as well as adding a display of the sprite in the form of a Gun. 
+                <br>
+                <br>
+                The end result was I created an abstract class that contains information every gun has (ammo, fire rate, projectile etc.
+                This was already defined by another programmer). This has an abstract method FireProjectiles() that 
+                spawns the projectiles to fire, which should make it easy to create a new weapon by simply creating a child class and 
+                implementing that function.  I also created a new player state where the player cannot move (i.e. firing their gun). 
+                <br>
+                <br>
+                Overall, I am still getting used to the codebase, and every task was completed but took a fair amount 
+                of time of thinking, iterating and reading the codebas to figure out. I think that as I get more 
+                practiced with the codebase this should get better with time. 
+                <br>
+                <br>
+                Time ~6hr
+            <h3>
+                Bolas/Launcher and Debuff System
+            </h3>
+                The weapons system changes was the bulk of the work in creating a new gun "Bolas Launcher". This new gun specified 
+                by the design team has similar behavior as a pistol in that it only shoots one projectile at a time, but the key 
+                part is that it should apply a slow debuff to the enemy it hits. 
+                <br>
+                <br>
+                This necessitates a buff/debuff system which was not yet in place. Again, to implement this without regards of 
+                scalability would be trivial. I started off with this approach by simply creating two components: 
+                <br>
+                <br>
+                    1. "HasBuff" to attach to the player with a public function ApplySlowDebuff() that applies the slow debuff,
+                    <br>
+                    2. "SlowOnCollide" to attach to a Bolas bullet to invoke this function.
+                    <br>
+                    3. To create a new buff type, create a new function in HasBuff() with buff effect and corresponding timer logic. 
+                    <br>
+                    4. Create new buff caller component to call this function on contact.
+                <br>
+                <br>
+                ApplySlowDebuff() would have to have its own time counter, and it would have to have logic to reverse the 
+                debuff on the counter end as well as resetting its own time if ApplySlowDebuff() was called while the debuff is 
+                still active.
+                <br>
+                <br>
+                This worked fine, howeever this barebones approach would require programmers to reimplement logic that is common 
+                to all buffs/debuffs: a time counter, removing the buff/defbuff on time counter. To remedy this, the following
+                system was implemented: 
+                <br>
+                <br>
+                    1. "HasBuff" to attach to the player with a public function ApplySlowDebuff(BuffSO buff) that applies a buff
+                        based on the information in the BuffSO scriptable object, and automatically removes buff after it expires
+                    <br>
+                    2. "BuffOnCollide" to attach to a Bolas bullet to invoke this function 
+                    <br>
+                    3. BuffSO is an abstract class that has duration info, and defines abstract methods ActivateBuff() and DeactivateBuff()
+                    <br>
+                    4. Common logic between buffs/debuffs already implemented in "Hasbuff". To create a new buff, simply implement a child 
+                    class to BuffSO. 
+                <br>
+                <br>
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/drift/Bolas.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Demonstration of new Bolas gun and its slow effect.
+                    </figcaption>
+                </figure>
+                I was particularly happy about how this turned out. I found it to be good practice in thinking about and writing systems that would 
+                allow for less code/logic repetition and easier implementation of new features. 
+                <br>
+                <br>
+                Time ~2.5hr
+            <h3>
+                Overview
+            </h3>
+            Overall, tasks for me this week felt more focused on establishing infrastructure
+            to allow for new features and less on the features themselves. As a result I ended up taking more 
+            time to read Project Drift documentation and the code itself to understand the codebase and the programming patterns it 
+            employs. My hope was to write code as legible and consistent as possible with the codebase in recognition
+            that a 25 person project has higher standards with regards to code quality than I am used to with personal game projects. 
+            <br>
+            <br>
+            I found these two weeks to have been good practice in utilizing and implementing inheritance in the 
+            context of Unity (for example, learning that coroutines cannot be made directly in class instances that don't directtly inherit from Monobehavior),
+            as well as getting acquainted with some of the features of C# that I have not encountered
+            before (such as get and set methods). It was also a nice introduction to using ScriptableObjects and learning 
+            about its uses in the process of using it to implement some of the requested features (such as a buff system).
+            <h3>
+                Hours Breakdown:
+            </h3>
+            <br>
+                4hr Studio Meetings <br>
+                3hr Checkpoint System <br>
+                6hr Weapons Systems <br>
+                2.5hr Buff System <br>
+                1hr communication with lead <br>
+                16.5hr Total<br>
+        </div>
+    </div> 
+</div>
