@@ -39,42 +39,125 @@
             <h3>
                 Checkpoint System Bug Fixes and Additions
             </h3>
-                Much of the bugs I ended up fixing were related to one of the simpler systems I implemented last spring.
-                In turns out that the actual usage of the checkpoint system introduced some unforseen problems. 
+                Much of the bugs I ended up fixing were related to one of the simpler systems I implemented last sprint.
+                It turns out that the actual usage of the checkpoint system introduced some unforseen problems, making the system
+                slightly more complicated than originally thought.
                 <br>
                 <br>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium porro hic eos harum dolorem aliquid reiciendis delectus fuga facere consequuntur quo atque vero non, quasi dolor ea vitae deleniti neque?
+                One issue was that since the Checkpoint system saves into the disk and does not differentiate between scenes. So a player
+                can register a checkpoint in one scene, die in the next and be respawned at a checkpoint location that is not 
+                valid for the new scene. This had to be fixed by having the checkpoint system save different location entries for each scene,
+                as seen below. 
+                <figure>
+                    <img src="files/drift/checkpointFix.png">
+                    <figcaption>
+                        SceneManager.GetActiveScene() was a necessary addition for correct behavior between scenes
+                    </figcaption>
+                </figure>
+
+                Another edge case was realized in issues regarding placing a checkpoint zone where the player starts by default in the scene.
+                The checkpoint implementation relies on respawning the player at the previous location in a customized "LateStart()" function
+                that calls one frame after the Unity function Start() is called. 
+                
+                This and Start() would get called every time the player dies, as death triggers a scene reload. 
+                This was necessary to avoid null references to certain player variables due to accessing them too early in Start(). 
+                However, this introduces the issue of giving the player a single frame of time to register itself to a checkpoint zone 
+                placed at the default player location at the start of the scene. This means the player would never respawn at a checkpoint that 
+                isn't the first checkpoint, rendering the system useless. 
                 <br>
                 <br>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam adipisci perspiciatis odit ratione nam earum incidunt, magni quidem vitae error recusandae corrupti delectus quibusdam cum, consequatur reiciendis consequuntur dignissimos unde!
+                This was eventually worked around by modifying the checkpoint objects themselves to not collide or register itself with the player
+                in the first few 0.5s of the scene and using OnTriggerStay() instead of OnTriggerEnter().
+
                 <figure>
                     <video autoplay muted loop playsinline height="auto">
                     <source src="files/drift/Checkpoint.mp4" type="video/mp4" poster="files/alpha_1px.png">
                         Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                        Checkpoint system : simply drag object into the scene and it works
+                        The Checkpoint system (from 2/5/22)
                     </figcaption>
                 </figure>
                 <br>
                 <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, odio cumque harum maxime voluptatibus reiciendis ipsum alias repudiandae dolorem laborum saepe tempore ducimus excepturi quod error impedit dignissimos accusantium esse!
+                The issues don't end there. Now that the checkpoint system behaves correctly, the player will always respawn at the previous
+                checkpoint encountered. This is desired in gameplay but can be inconvenient for level designers, as sometimes previous parts 
+                of the level cannot be accessed on a new scene load, making it difficult to test early parts of the level. There needs to be
+                a way for designers 
                 <br>
                 <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quia qui nostrum molestias, vel tenetur exercitationem ratione blanditiis! Accusamus velit tempore commodi eveniet architecto nisi fugiat officiis amet nulla voluptatibus.
+                Nikhil suggested writing a developer console command to allow teleportation between checkpoints. This fixes the issue, allowing
+                designers to quickly travel between areas in a level to test their changes through gameplay. An example usage is displayed below.
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/drift/teleportConsole.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Checkpoint system: teleport between checkpoints in the scene
+                    </figcaption>
+                </figure>
+                Overall this was an interesting experience with a feature that was easy to implement but has many edge cases in terms of behavior.
+                It was also new to me in programming a feature that requires consideration of more than just the end player. Despite having correct 
+                behavior as a checkpoint for the player, it was necessary to implement a feature to make the system easy to use for level designers
+                as well which was not something I considered at first but makes sense in the end. 
                 <br>
                 <br>
-                Time ~3hr
-            
+                <h3>
+                    Sword Bullet Reflection
+                </h3>
+                One of the quicker but more visible features I implemented thus far. This was fairly straightforward to implement in terms of simply
+                reversing collided bullets directories and adding some public variables to make it tunable by designers. 
+                <figure>
+                    <video autoplay muted loop playsinline height="auto">
+                    <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Checkpoint system: teleport between checkpoints in the scene
+                    </figcaption>
+                </figure>
+                <h3>
+                    Level Art Integration
+                </h3>
+                I was asked this sprint to integrate sprite sheets into the tutorial scene. That is, import the sprite sheet, generate sprites and replace
+                the tutorial scene with these new sprites. This was a learning process for me in terms of reading documentation
+                and learning Unity's tiling system. I encountered many issues in this process due to being unfamiliar with the steps in using
+                the system. For example, I had issues with cutting the sprites properly due to not realizing the Unity defaults the maximum resolution of
+                sprite sheets to 2048x2048 sheets when the provided sheet was 3072x3072. 
+                <br>
+                <br>
+                In the end I created a palette based on the sprite sheet. However applying the sprites themselves was a confusing process for me as
+                it wasn't clear to me how the sprites were meant to be used. It is easier to explain with pictures, so below is an early iteration
+                of my integration:
+                <figure>
+                    <img src="files/drift/NotTopDown.PNG">
+                    <figcaption>
+                        Something off...
+                    </figcaption>
+                </figure>
+                It is evident that there is something off. It seems like a top down view whereas the game is meant to be somewhat isometric.
+                The edge wall sprites also definitely don't seem like they're being used according to the artists intent. After consulting with
+                an artist I managed to implement a better looking version (I hope) of the integrated art.
+                <figure>
+                    <img src="files/drift/caveTiled.PNG">
+                    <figcaption>
+                        Better - use empty tiles.
+                    </figcaption>
+                </figure>
+                It is still a work in progress and a lot more working with the actual Unity editor than I am used to. Though I feel that I now
+                understand a bit more about Unity and the various tools it has in tilemaps and tile palettes.
+
             <h3>
                 Hours Breakdown:
             </h3>
             <br>
                 4hr Studio Meetings <br>
-                4hr Checkpoint System Fixes<br>
+                4hr Checkpoint System (and other bug fixes)<br>
                 1hr Sword Bullet Reflections <br>
-                3hr Art integrations <br>
-                12hr Total<br>
+                30min Weapons System Documentations <br>
+                4hr Art integrations <br>
+                13.5hr Total<br>
         </div>
     </div> 
 </div>
