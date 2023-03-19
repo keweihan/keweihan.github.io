@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../..">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../../static/css/warpball.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/javascript/styles/lightfair.css">
+    <script src="static/javascript/highlight.pack.js"></script>
+    <script src="static/javascript/warpball.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<script>
+    injectCSS();
+</script>
+
+<title>
+    Kewei Han Project Drift (2023-3-19)
+</title>
+
+<div id="center">
+    <div id="header">
+        <h2>Project Drift Programmer Development Log: Sprint 3</h2>
+    </div>
+
+    <div class = "post">
+        <div class = "post-date"> 
+            March 19th, 2023
+        </div>
+        
+        <div class = "post-body">
+           <br>
+                The first of the past three sprint weeks were dedicated to bug finding and fixing.
+            <h3>
+
+            </h3>
+
+            <h3>
+                Fixing 'C' Ability Null Reference
+            </h3>
+                This involved fixing an oversight in the ability system, where an 'initialize' function was written but not called properly
+                by the shop when it is purchased and equipped.
+
+                This was fixed by using a setter method that always calls initialize on change. ~ 30min
+
+                <figure>
+                    <img src="files/drift/checkpointFix.png">
+                    <figcaption>
+                        Fix for ability system. ~30min
+                    </figcaption>
+                </figure>
+
+            <h3>
+                Fixing Hammer and Spear Sprite and Behaviors
+            </h3>
+                Hammer and spear sprites were mainly a 
+
+                
+
+            <h3>
+                Sword Bullet Reflection Art Integration
+            </h3>
+            A quick integration of the sword reflection sprite.  
+            <figure>
+                <video autoplay muted loop playsinline height="auto">
+                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>
+                    Checkpoint system: teleport between checkpoints in the scene
+                </figcaption>
+            </figure>
+
+            <h3>
+                Player Attack Step Improvements
+            </h3>
+            A quick integration of the sword reflection sprite.  
+            <figure>
+                <video autoplay muted loop playsinline height="auto">
+                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>
+                    Checkpoint system: teleport between checkpoints in the scene
+                </figcaption>
+            </figure>
+
+            <h3>
+                Player Charge Attack
+            </h3>
+            Design specified a that the sword should allow the player to click and hold, then release for a different attack.
+            <figure>
+                <video autoplay muted loop playsinline height="auto">
+                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>
+                    Completed flurry attack ~30min
+                </figcaption>
+            </figure>
+            This took some time to figure out as it was also dependent on the player stepping in the direction of attack during a normal attack 
+            being implemented smoothly which was the majority of the task. 
+
+            <h3>
+                Player Smooth Attack Stepping
+            </h3>
+            In order to implement a nice looking smooth attack, the player should have the functionality to attack step.
+            <figure>
+                <video autoplay muted loop playsinline height="auto">
+                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>
+                    Completed attack step ~4hr
+                </figcaption>
+            </figure>
+            Attack step before was a 1 frame teleportation in the direction of attack. I reworked the system to be smooth and adjustable by
+            design using Unity AnimationCurves, as programmed in a way that is reusable by other systems (namely flurry attacks). This took 
+            a while to figure out. Logic was originally in the AttackController, which means each step will always be the same but it was 
+            subsequently moved to the weapon as weapons may require different step lengths. 
+
+            <h3>
+                Hours Breakdown:
+            </h3>
+            <br>
+                6hr Studio Meetings (3 meetings, 2hr each)<br>
+                2hr Player Worksession (discussion on behavior with design) <br>
+                4hr Bug Fixes (and other bug fixes)<br>
+                2hr Art integrations <br>
+                4.5 Flurry Animation/Attack Step <br>
+                18.5hr Total<br>
+        </div>
+    </div> 
+</div>
