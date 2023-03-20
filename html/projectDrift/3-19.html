@@ -34,9 +34,9 @@
         <div class = "post-body">
            <br>
                 The first of the past three sprint weeks were dedicated to bug finding and fixing.
-            <h3>
-
-            </h3>
+            <h2>
+                Notable bugs/fixes
+            </h2>
 
             <h3>
                 Fixing 'C' Ability Null Reference
@@ -44,65 +44,67 @@
                 This involved fixing an oversight in the ability system, where an 'initialize' function was written but not called properly
                 by the shop when it is purchased and equipped.
 
-                This was fixed by using a setter method that always calls initialize on change. ~ 30min
+                This was fixed by using a setter method that always calls initialize on change so that the fix doesn't span multiple scripts and so 
+                that future bugs of the same type won't be possible.  ~ 30min
 
                 <figure>
-                    <img src="files/drift/checkpointFix.png">
+                    <img src="files/drift/abilityFix.png">
                     <figcaption>
                         Fix for ability system. ~30min
                     </figcaption>
                 </figure>
 
             <h3>
-                Fixing Hammer and Spear Sprite and Behaviors
+                Small Fixes 
             </h3>
-                Hammer and spear sprites were mainly a 
+                - Fixed Hammer and Spear Sprite and Behaviors. Previously not displaying correctly
+                <br>
+                - Fixed Gun Sprite Display. Previously displaying backwards
+                <br>
+                - Fixed player moving on each mosue1
+                <br>
+                - Fixed attack on mouse down instead of mouse up (new animations mismatch with designer specifications)
 
+            
+            <h3>
+                Communicating with Design
+            </h3>
+            One 2hr work session with the player combat designer helped me better understand the specifics of the implementations they needed. One thing
+            they needed was adjustable timing in when the sword collider shows up, which I was able to implement in the work session among other things.
+            This helped me understand what was important to priortize that week.
                 
-
             <h3>
                 Sword Bullet Reflection Art Integration
             </h3>
-            A quick integration of the sword reflection sprite.  
+            A quick integration of the sword reflection sprite. This was a nice learning experience in using Unity Animator to create an animated sprite.
+            An easy alternative was to write a script to cycle through sprites, but I found this to be a good opportunity to learn Unity Animator through a tutorial
+            to implement a simple animated art asset. One issue I encountered during this process was the recording stopping on the last frame when I wanted it disappear instead.
+            I learnt that an elegant way to do this was to use the animator recording to add a new frame where the sprite is not assigned. 
             <figure>
                 <video autoplay muted loop playsinline height="auto">
-                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                <source src="files/drift/parryShort.mp4" type="video/mp4" poster="files/alpha_1px.png">
                     Your browser does not support the video tag.
                 </video>
                 <figcaption>
-                    Checkpoint system: teleport between checkpoints in the scene
+                    Parry star animation. ~2hr
                 </figcaption>
             </figure>
-
-            <h3>
-                Player Attack Step Improvements
-            </h3>
-            A quick integration of the sword reflection sprite.  
-            <figure>
-                <video autoplay muted loop playsinline height="auto">
-                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
-                    Your browser does not support the video tag.
-                </video>
-                <figcaption>
-                    Checkpoint system: teleport between checkpoints in the scene
-                </figcaption>
-            </figure>
-
+            The animator system is complicated and confusing but I felt that this helped acquaint me with it's very basics. 
             <h3>
                 Player Charge Attack
             </h3>
-            Design specified a that the sword should allow the player to click and hold, then release for a different attack.
+            Design specified that the sword should allow the player to click and hold, then release for a different attack.
             <figure>
                 <video autoplay muted loop playsinline height="auto">
-                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                <source src="files/drift/Swordflurry.mp4" type="video/mp4" poster="files/alpha_1px.png">
                     Your browser does not support the video tag.
                 </video>
                 <figcaption>
-                    Completed flurry attack ~30min
+                    Completed flurry attack ~1hr
                 </figcaption>
             </figure>
             This took some time to figure out as it was also dependent on the player stepping in the direction of attack during a normal attack 
-            being implemented smoothly which was the majority of the task. 
+            being implemented smoothly which was the majority of the task. It also required me to access the player animator through a script that was written elsewhere.
 
             <h3>
                 Player Smooth Attack Stepping
@@ -110,17 +112,28 @@
             In order to implement a nice looking smooth attack, the player should have the functionality to attack step.
             <figure>
                 <video autoplay muted loop playsinline height="auto">
-                <source src="files/drift/reflect3.mp4" type="video/mp4" poster="files/alpha_1px.png">
+                <source src="files/drift/attackStepFix.mp4" type="video/mp4" poster="files/alpha_1px.png">
                     Your browser does not support the video tag.
                 </video>
                 <figcaption>
-                    Completed attack step ~4hr
+                    Smoother attack step movement. ~4hr
                 </figcaption>
             </figure>
             Attack step before was a 1 frame teleportation in the direction of attack. I reworked the system to be smooth and adjustable by
-            design using Unity AnimationCurves, as programmed in a way that is reusable by other systems (namely flurry attacks). This took 
-            a while to figure out. Logic was originally in the AttackController, which means each step will always be the same but it was 
-            subsequently moved to the weapon as weapons may require different step lengths. 
+            design using Unity AnimationCurves. It also had to be programmed in a way that is reusable by other systems (namely flurry attacks), so it had
+            to be a callable function with a coroutine. 
+            <br>
+            <br>
+            These constraints made it take a while to figure out a clean way to write it. 
+            Logic was originally in the AttackController, which means each step will always be the same but it was 
+            subsequently moved to the weapon as weapons may require different step lengths. It also originally used a timer variable in Update() to keep
+            track of the logic for smoothly moving the player during attack, but that resulted in many public variables and hard to follow code. The cleaner method 
+            that I arrived upon was to use a coroutine attached to the player, allowing for all relevant variables to be contained within the relevant IEnumerator.
+            <br>
+            <br>
+            The reason this was not the case earlier was because the MeeleeWeaponBase class does not inherit directly from Monobehavior, disallowing use of StartCoroutine.
+            This meant each couroutine must be associated with a Monobehavior object and so StartCoroutine could not be called directly. It took me some time to figure out 
+            that StartCoroutine could simply be called off of an object that does inherit from the Monobehavior (such as the player). A time costly brainfart/learning moment! 
 
             <h3>
                 Hours Breakdown:
@@ -128,10 +141,10 @@
             <br>
                 6hr Studio Meetings (3 meetings, 2hr each)<br>
                 2hr Player Worksession (discussion on behavior with design) <br>
-                4hr Bug Fixes (and other bug fixes)<br>
+                3hr Bug Fixes (and other bug fixes)<br>
                 2hr Art integrations <br>
-                4.5 Flurry Animation/Attack Step <br>
-                18.5hr Total<br>
+                5hr Flurry Animation/Attack Step <br>
+                18hr Total<br>
         </div>
     </div> 
 </div>
