@@ -1,3 +1,8 @@
+:root {
+  --main-color: rgb(205, 229, 233);
+  --dim-color: rgb(110, 122, 124);
+}
+
 video {
   background-image: url(files/loading.gif);
   background-repeat: no-repeat;
@@ -32,7 +37,7 @@ video {
 .link:focus {
   transition: 0.3s;
   width: 100%;
-  background-color:rgb(168, 168, 168);
+  background-color:var(--dim-color);
   color: white;
 }
 
@@ -89,7 +94,7 @@ video {
 } */
 
 body {
-    background-color: rgb(205, 229, 233);
+    background-color: var(--main-color);
 }
 
 
@@ -135,7 +140,7 @@ body {
     pointer-events   : none;
     background-image : linear-gradient(to bottom, 
                       rgba(255,255,255, 0), 
-                      rgba(255,255,255, 1) 90%);
+                      var(--main-color) 90%);
     width    : 100%;
     height   : 4em;
   }
@@ -143,5 +148,5 @@ body {
   #center {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
-    background-color: rgb(205, 229, 233);
+    background-color: var(--main-color);
   }
