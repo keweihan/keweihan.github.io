@@ -60,10 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check if the dropdown is currently visible
         if ($content.is(':visible')) {
           // Animate hiding
-          Velocity(content, "slideUp");
+          $content.velocity("slideUp");
         } else {
           // Animate showing
-          Velocity(content, "slideDown");
+          //Velocity(content, "slideDown");
+          $content.velocity("slideDown");
+
           // Hide other dropdowns
           dropdowns.forEach(function(otherDropBtn) {
             var otherTargetId = otherDropBtn.getAttribute('data-target');
