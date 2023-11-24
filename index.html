@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="./static/css/style.css">
 
     <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5/velocity.ui.min.js"></script> -->
+    <script src="./static/javascript/velocity.ui.min.js"></script>
     <script src="./static/javascript/velocity.min.js"></script>
     <script src="./static/javascript/indexs.js"></script>
-    <script src='scripts/jquery.min.js'></script>
+
     <title> Kevin Han Personal Website </title>
 </head>
 
@@ -38,7 +42,7 @@
                 Masters of Software Engineering - Scalable Systems
             </p>
             
-            <div id="link-list-desktop">
+            <nav id="link-list-desktop">
                 <button onclick="openURL('./files/KeweiHan_Resume.pdf')" class="link">Resume</button>
 
                 <div class="link-external">
@@ -46,11 +50,11 @@
                     <!-- <span class="tooltiptext">Direct Link</span> -->
                 </div>
                 <hr style="width:100%; color:rgb(201, 201, 201);">
-                <button class="link">VR/AR Projects          </button>
-                <div class="link-group">
-                    <button onclick="openURL('./html/OrbitVR.html')"          class="link">OrbitVR</button>
-                    <button onclick="openURL('./html/AA2GO.html')"          class="link">Ann Arbor Go!</button>
-                    <button onclick="openURL('./html/BBBCSE_Simulator.html')"          class="link">Computer Lab Simulator</button>
+                <button class="link dropbtn" data-target="dropdown1">VR/AR Projects          </button>
+                <div id="dropdown1" class="link-group">
+                    <li><button onclick="openURL('./html/OrbitVR.html')"          class="link">OrbitVR</button></li>
+                    <li><button onclick="openURL('./html/AA2GO.html')"          class="link">Ann Arbor Go!</button></li>
+                    <li><button onclick="openURL('./html/BBBCSE_Simulator.html')"          class="link">Computer Lab Simulator</button></li>
                 </div>
                 
                 <hr style="width:100%; color:rgb(201, 201, 201);">
@@ -78,9 +82,9 @@
                     </div>
                     <button onclick="openURL('./html/semiconductor.html')" class="link">Nanomaterial Semiconductor research </button>
                 </div>
-            </div>
+            </nav>
             
-            <div id="link-list-mobile">
+            <nav id="link-list-mobile">
                 <div class="link">
                     <a href="./files/Resume.pdf">Resume</a>
                 </div>
@@ -109,7 +113,7 @@
                 <div class="link">
                     
                 </div>
-            </div>
+            </nav>
 
         </div>
     </div>

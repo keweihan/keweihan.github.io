@@ -1,3 +1,5 @@
+li {text-decoration : none; color : #2d2f31; list-style-type: none;}
+
 .dropdown_content {
     display: flex;
     justify-content: center;
@@ -43,11 +45,15 @@
 
 .link-group {
     padding-left: 20px;
-}
-
-#link-list-desktop, #link-list-mobile, .link-group {
     display: flex;
     flex-direction: column;
+    display: none;
+}
+
+#link-list-desktop, #link-list-mobile {
+    display: flex;
+    flex-direction: column;
+    
 }
 
 /* Small screen */
