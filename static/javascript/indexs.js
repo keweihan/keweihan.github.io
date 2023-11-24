@@ -14,8 +14,9 @@ function insertBrowser()
 // OnClick() animation function
 function openURL(url)
 {
+    
     // Insert iframe browser and make wider 
-    Velocity(document.getElementById("browser-wrapper"), 
+    $(document.getElementById("browser-wrapper")).velocity( 
     {
         width: "60%" 
     },
@@ -30,7 +31,7 @@ function openURL(url)
     );
 
     // Make link smaller
-    Velocity(document.getElementById("link-hub"), 
+    $(document.getElementById("link-hub")).velocity(
     {
         width: "20%" 
     },
@@ -63,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
           $content.velocity("slideUp");
         } else {
           // Animate showing
-          //Velocity(content, "slideDown");
           $content.velocity("slideDown");
 
           // Hide other dropdowns
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var otherTargetId = otherDropBtn.getAttribute('data-target');
             if (otherTargetId !== targetId) {
               var otherContent = document.getElementById(otherTargetId);
-              Velocity(otherContent, "slideUp");
+              $(otherContent).velocity("slideUp");
             }
           });
         }
