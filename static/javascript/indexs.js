@@ -14,6 +14,10 @@ function insertBrowser()
 // OnClick() animation function
 function openURL(url)
 {
+    // If mobile
+    if (window.innerWidth <= 768) {
+        window.location.href = url;
+    }
     
     // Insert iframe browser and make wider 
     $(document.getElementById("browser-wrapper")).velocity( 

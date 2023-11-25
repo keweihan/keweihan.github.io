@@ -63,18 +63,14 @@ iframe::-webkit-scrollbar {
     display: none;
 }
 
-#link-list-desktop, #link-list-mobile {
+#link-list {
     display: flex;
     flex-direction: column;
     
 }
 
 /* Small screen */
-@media only screen and (max-width: 768px) {
-    #link-list-desktop {
-        display: none;
-    }
-    
+@media only screen and (max-width: 768px) {    
     #link-hub {
         width: 90vw !important;
     }
