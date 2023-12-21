@@ -21,34 +21,18 @@ function openURL(url)
     
     // Insert iframe browser and make wider 
     $(document.getElementById("browser-wrapper")).velocity( 
-    {
-        width: "60%" 
-    },
-    { 
-        duration: 750, 
-        easing: [.17,.67,.22,.99],
-        begin: insertBrowser, 
-        complete: function setURL(){
-            document.getElementById("browser").src = url;
-        },
-    }
+      {
+          width: "60%" 
+      },
+      { 
+          duration: 750, 
+          easing: [.17,.67,.22,.99],
+          begin: insertBrowser, 
+          complete: function setURL(){
+              document.getElementById("browser").src = url;
+          },
+      }
     );
-
-    // Make link smaller
-    $(document.getElementById("link-hub")).velocity(
-    {
-        width: "20%" 
-    },
-    { 
-        duration: 750, 
-        easing: [.17,.67,.22,.99],
-        begin: insertBrowser, 
-        complete: function setURL(){
-            document.getElementById("browser").src = url;
-        },
-    }
-    );
-    document.getElementById("browser").src = url;   
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -85,5 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 window.onload = function() {
-  openURL("./html/home.html");
+  setTimeout(function() {
+    openURL("./html/home.html");
+  }, 500);
 };

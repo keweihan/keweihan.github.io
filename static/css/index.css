@@ -26,7 +26,8 @@ body {
     height: 85vh;
     text-align: left;
     overflow: hidden;
-    background: url(files/loading.gif) center center no-repeat;
+    /* background: url(files/loading.gif) center center no-repeat; */
+    background-color: white;
     border-radius: 20px;
 
     margin-left: 25px;
@@ -98,7 +99,7 @@ body {
     }
 
     #link-hub {
-        width: 386px;
+        width: 340px;
     }
 }
 
