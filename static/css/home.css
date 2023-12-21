@@ -14,16 +14,9 @@
   width: 60%;
 }
 
-.item_text_left, .item_text_right {
+.item_text {
   width: 40%;
-}
-
-.item_text_left {
   padding-left: 40px;
-}
-
-.item_text_right {
-  padding-left: -40px;
 }
 
 #center {
@@ -36,7 +29,44 @@ body {
   justify-content: center;
 }
 
+/* Small screen */
+@media only screen and (max-width: 768px) {    
+  .item {
+    align-items: center;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
 
-/* .item_text_right {
-  padding-left: 20px;
-} */
+  .item_text {
+    width: 100%;
+    padding-left: 40px;
+  }
+
+  .item_display {
+    width: 100%;
+  }
+
+  #item_list {
+    justify-content: center;
+  }
+  
+}
+
+/* Large screen */
+@media only screen and (min-width: 769px) {
+  .item:nth-child(odd) .item_display {
+    order: 1; /* Video first for odd items */
+  }
+  
+  .item:nth-child(odd) .item_text {
+    order: 2; /* Text second for odd items */
+  }
+  
+  .item:nth-child(even) .item_display {
+    order: 2; /* Video second for even items */
+  }
+  
+  .item:nth-child(even) .item_text {
+    order: 1; /* Text first for even items */
+  }
+}

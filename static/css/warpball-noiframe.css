@@ -34,7 +34,7 @@ video, img {
 /* Large screen */
 @media only screen and (min-width: 1066px) {
     #center {
-        width: 40%;
+        width: 60%;
     }
 
     video, img {
