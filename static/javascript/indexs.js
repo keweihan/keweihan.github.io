@@ -10,6 +10,21 @@ function insertBrowser()
     } 
 }
 
+function changeSourceAndFadeIn(newUrl) {
+  document.getElementById("browser").src = newUrl;
+  document.getElementById("browser").style.opacity = 0;
+  document.getElementById("browser").onload = function() {
+    $(document.getElementById("browser")).velocity(
+      {
+        opacity: 1 
+      },
+      { 
+          duration: 750, 
+          easing: [.17,.67,.22,.99],
+      }
+    )
+  }
+}
 
 // OnClick() animation function
 function openURL(url)
@@ -29,7 +44,7 @@ function openURL(url)
           easing: [.17,.67,.22,.99],
           begin: insertBrowser, 
           complete: function setURL(){
-              document.getElementById("browser").src = url;
+            changeSourceAndFadeIn(url);
           },
       }
     );
