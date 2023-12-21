@@ -49,6 +49,21 @@ video {
   align-content: center;
 }
 
+#browser-wrapper {
+  overflow: hidden;
+  scrollbar-width: none;  /* Firefox */
+}
+
+#browser {
+  overflow-y: scroll;
+  scrollbar-width: none;  /* Firefox */
+}
+
+#browse::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+
 .clips {
   display: flex;
   justify-content: center;
