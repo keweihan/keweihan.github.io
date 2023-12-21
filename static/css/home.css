@@ -1,6 +1,7 @@
 .item {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .item_display {
@@ -9,8 +10,9 @@
 
 .item_text_left, .item_text_right {
   width: 40%;
-}
-
-.item_text_left {
   padding-left: 40px;
 }
+
+/* .item_text_left {
+  padding-left: 40px;
+} */
