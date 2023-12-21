@@ -178,3 +178,8 @@ body::-webkit-scrollbar-thumb {
   button {
     font-family: 'Roboto';
   }
+
+  .youtubeEmbed {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
