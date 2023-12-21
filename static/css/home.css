@@ -7,7 +7,7 @@
 .item {
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 40px;
 }
 
 .item_display {
@@ -17,9 +17,25 @@
 .item_text_left, .item_text_right {
   width: 40%;
 }
+
 .item_text_left {
   padding-left: 40px;
 }
+
+.item_text_right {
+  padding-left: -40px;
+}
+
+#center {
+  margin: 30px;
+  margin-right: 90px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* .item_text_right {
   padding-left: 20px;
