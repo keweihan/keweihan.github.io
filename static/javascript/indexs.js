@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-// window.onload = function() {
-//   openURL("./html/home.html");
-// };
+window.onload = function() {
+  openURL("./html/home.html");
+};

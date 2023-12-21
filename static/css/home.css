@@ -1,7 +1,13 @@
+#item_list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 100px;
 }
 
 .item_display {
@@ -10,9 +16,11 @@
 
 .item_text_left, .item_text_right {
   width: 40%;
+}
+.item_text_left {
   padding-left: 40px;
 }
 
-/* .item_text_left {
-  padding-left: 40px;
+/* .item_text_right {
+  padding-left: 20px;
 } */
