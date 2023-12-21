@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 :root {
   --main-color: rgb(223, 223, 223);
   --dim-color: rgb(110, 122, 124);
@@ -28,7 +31,7 @@ video {
 }
 
 .link:hover, .link-external:hover {
-    background-color: #ddd;
+    background-color: #8a8a8a;
     color: white;
     width: 200px !important;
     cursor: default;
@@ -49,14 +52,24 @@ video {
   align-content: center;
 }
 
-.scroller {
-  overflow-y: scroll;
-  scrollbar-color: #0A4C95 #C2D2E4;
+html {
+  /* --scrollbarBG: #CFD8DC; */
+  --thumbBG: #90A4AE;
 }
-
-/* width */
-::-webkit-scrollbar {
-  width: 0px;
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }
 
 
@@ -103,11 +116,6 @@ video {
 /* .link-external:hover .tooltiptext {
   opacity: 100;
 } */
-
-body {
-    background-color: var(--main-color);
-}
-
 
  /* unvisited link */
  a:link {
@@ -157,7 +165,16 @@ body {
   }
 
   #center {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     text-align: left;
     background-color: var(--main-color);
+  }
+
+  body {
+    background-color: var(--main-color);
+    font-family: 'Roboto';
+  }
+
+  button {
+    font-family: 'Roboto';
   }
