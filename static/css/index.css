@@ -7,7 +7,9 @@ iframe::-webkit-scrollbar {
 
 body {
     margin-top: 0px;
-    background-color: rgb(130, 158, 167);
+
+    /* ALTERNATE STYLE */
+    /* background-color: rgb(130, 158, 167);  */
 }
 
 .dropdown_content {
@@ -31,7 +33,7 @@ body {
     border-radius: 20px;
 
     margin-left: 25px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); */
 }
 
 #browser {
@@ -60,14 +62,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    /* box-shadow: 4px; */
-
-     /* Rounded corners */
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-
-     /* Shadow */
-     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adjust values and color for different effects */
 }
 
 #contact-links {

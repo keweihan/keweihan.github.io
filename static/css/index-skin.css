@@ -1,0 +1,25 @@
+/* Properties for a different appearance for index page */
+body {
+    background-color: rgb(130, 158, 167) !important; 
+}
+
+#browser-wrapper {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#browser {
+    /* display: flex; */
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#link-hub {
+    box-shadow: 4px;
+
+     /* Rounded corners */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+     /* Shadow */
+     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
