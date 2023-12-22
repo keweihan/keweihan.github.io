@@ -25,7 +25,7 @@ body {
 
 #bar {
     width: 2px;
-    background-color: var(--divider-color);
+    background-color: var(--index-vertical-color);
     border-radius: 10px;
 }
 

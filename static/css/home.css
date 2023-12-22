@@ -32,6 +32,31 @@ body {
   justify-content: center;
 }
 
+#qube-btn {
+  background-color: #365e69;
+}
+
+#qube-btn:hover{
+  background-color: #722528;
+}
+
+#dd-btn {
+  background-color: #1fab07;
+}
+
+#dd-btn:hover{
+  background-color: #157704;
+}
+
+#warpball-btn {
+  background-color: #a47082;
+}
+
+#warpball-btn:hover{
+  background-color: #cc5699;
+}
+
+
 /* Small screen */
 @media only screen and (max-width: 768px) {    
   .item {

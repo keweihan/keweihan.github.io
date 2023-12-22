@@ -1,7 +1,10 @@
+/* Light mode */
 :root {
     --main-bg-color: white;
     --main-text-color : black;
     --divider-color : rgb(201, 201, 201, 0.4);
+
+    --index-vertical-color : rgb(201, 201, 201, 0.4);
   
     --link-text-normal-color: rgb(83, 83, 83);
     --pressed-button-color: rgb(110, 122, 124);
@@ -13,9 +16,11 @@
     :root {
         --main-bg-color: rgb(26, 26, 26);
         --main-text-color : white;
-        --divider-color : rgb(201, 201, 201, 0.1);
+        --divider-color : rgba(148, 148, 148, 0.4);
+
+        --index-vertical-color : rgb(201, 201, 201, 0.1);
       
-        --link-text-normal-color: rgb(255, 255, 255);
+        --link-text-normal-color: rgb(201, 201, 201);
         --pressed-button-color: rgb(177, 196, 199);
         --pressed-text-color: rgb(0, 0, 0);
     }
