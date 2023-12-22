@@ -2,17 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('colors.css');
 
-video {
-  background-image: url('../../files/loading.gif');
-  background-repeat: no-repeat;
-  background-size: 30px 30px;
-  background-position: center;
-
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
+/* ============
+   Hoverable Links
+   ============ */
 .link, .link-external {
     background-color: var(--main-bg-color);
     border: none;
@@ -44,8 +36,43 @@ video {
   cursor: pointer;
 }
 
+a:link {
+  /* unvisited link */
+  font-weight: normal;
+  color: var(--link-text-normal-color);
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+a:visited {
+  /* visited link */
+  font-weight: normal;
+  color: var(--link-text-normal-color);
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+a:hover {
+  /* mouse over link */
+  font-weight: normal;
+  color: white;
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* ============
+   General Global Styles
+   ============ */
 #center {
   align-content: center;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  text-align: left;
+  background-color: var(--main-bg-color);
 }
 
 html {
@@ -55,19 +82,23 @@ html {
   color: var(--main-text-color);
 }
 
-body::-webkit-scrollbar {
-  width: 11px;
-}
-
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
+
+  margin-top: 30px;
+  background-color: var(--main-bg-color);
+  font-family: 'Roboto';
 }
 
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -76,6 +107,13 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid var(--scrollbarBG);
 }
 
+button {
+  font-family: 'Roboto';
+}
+
+/* ============
+   Page elements styling
+   ============ */
 .clips {
   display: flex;
   justify-content: center;
@@ -101,82 +139,47 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
- /* unvisited link */
- a:link {
-    font-weight: normal;
-    color: var(--link-text-normal-color);
-    transition: 0.15s;
-    text-decoration: none;
-  }
-  
-  /* visited link */
-  a:visited {
-    font-weight: normal;
-    color: var(--link-text-normal-color);
-    transition: 0.15s;
-    text-decoration: none;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    font-weight: normal;
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* selected link */
-  a:active {
-    font-weight: normal;
-    text-decoration: none;
-  }
+.headerimage {
+  position : relative;
+}
 
-  .headerimage {
-    position : relative;
-  }
-  
-  .headerimage:after {
-    content  : "";
-    position : absolute;
-    z-index  : 1;
-    bottom   : 0;
-    left     : 0;
-    pointer-events   : none;
-    background-image : linear-gradient(to bottom, 
-                      rgba(255,255,255, 0), 
-                      var(--main-bg-color) 90%);
-    width    : 100%;
-    height   : 4em;
-  }
+.headerimage:after {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  bottom   : 0;
+  left     : 0;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom, 
+                    rgba(255,255,255, 0), 
+                    var(--main-bg-color) 90%);
+  width    : 100%;
+  height   : 4em;
+}
 
-  #center {
-    font-family: 'Roboto', Helvetica, sans-serif;
-    text-align: left;
-    background-color: var(--main-bg-color);
-  }
+.youtubeEmbed {
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-  body {
-    margin-top: 30px;
-    background-color: var(--main-bg-color);
-    font-family: 'Roboto';
-  }
+.post-date {
+  font-style: italic;
+}
 
-  button {
-    font-family: 'Roboto';
-  }
+figcaption {
+  color: gray;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
 
-  .youtubeEmbed {
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  }
+video {
+  background-image: url('../../files/loading.gif');
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
 
-
-  .post-date {
-    font-style: italic;
-  }
-  
-  figcaption {
-    color: gray;
-    font-style: italic;
-    padding: 2px;
-    text-align: center;
-  }
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}

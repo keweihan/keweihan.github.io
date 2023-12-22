@@ -10,7 +10,7 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-bg-color: rgb(37, 37, 37);
+        --main-bg-color: rgb(26, 26, 26);
         --main-text-color : white;
       
         --link-text-normal-color: rgb(255, 255, 255);
