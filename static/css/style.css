@@ -7,7 +7,7 @@
 }
 
 video {
-  background-image: url(files/loading.gif);
+  background-image: url('../../files/loading.gif');
   background-repeat: no-repeat;
   background-size: 30px 30px;
   background-position: center;
