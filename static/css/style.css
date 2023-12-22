@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 :root {
-  --main-color: rgb(255, 255, 255);
-  --dim-color: rgb(110, 122, 124);
+  --main-bg-color: white;
+  --main-text-color : black;
+
+  /* Links */
+  --link-text-normal-color: rgb(83, 83, 83);
+  --pressed-button-color: rgb(110, 122, 124);
+  --pressed-text-color: white;
 }
 
 video {
@@ -18,9 +23,9 @@ video {
 }
 
 .link, .link-external {
-    background-color: white;
+    background-color: var(--main-bg-color);
     border: none;
-    color: rgb(83, 83, 83);
+    color: var(--link-text-normal-color);
     padding: 8px 1px;
     text-align: left;
     font-size: 14px;
@@ -32,7 +37,7 @@ video {
 
 .link:hover, .link-external:hover {
     background-color: #8a8a8a;
-    color: white;
+    color: var(--pressed-text-color);
     width: 200px !important;
     cursor: default;
 }
@@ -40,8 +45,8 @@ video {
 .link:focus {
   transition: 0.3s;
   width: 100%;
-  background-color:var(--dim-color);
-  color: white;
+  background-color:var(--pressed-button-color);
+  color: var(--pressed-text-color);
 }
 
 .link-external:hover, .link-external {
@@ -53,25 +58,30 @@ video {
 }
 
 html {
+  /* scrollbar customization (Chrome) */
   /* --scrollbarBG: #CFD8DC; */
   --thumbBG: #90A4AE;
+  color: var(--main-text-color);
 }
+
 body::-webkit-scrollbar {
   width: 11px;
 }
+
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
+
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
 }
+
 body::-webkit-scrollbar-thumb {
   background-color: var(--thumbBG) ;
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
 }
-
 
 .clips {
   display: flex;
@@ -97,25 +107,6 @@ body::-webkit-scrollbar-thumb {
   margin-right: auto;
   border-radius: 10px;
 }
-
-
-
-/* .link-external .tooltiptext {
-  opacity: 0;
-  width: 120px;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  transition: 0.2s;
-
-  transform: translateX(-30px);
-} */
-
-/* TODO */
-/* .link-external:hover .tooltiptext {
-  opacity: 100;
-} */
 
  /* unvisited link */
  a:link {
@@ -159,7 +150,7 @@ body::-webkit-scrollbar-thumb {
     pointer-events   : none;
     background-image : linear-gradient(to bottom, 
                       rgba(255,255,255, 0), 
-                      var(--main-color) 90%);
+                      var(--main-bg-color) 90%);
     width    : 100%;
     height   : 4em;
   }
@@ -167,12 +158,12 @@ body::-webkit-scrollbar-thumb {
   #center {
     font-family: 'Roboto', Helvetica, sans-serif;
     text-align: left;
-    background-color: var(--main-color);
+    background-color: var(--main-bg-color);
   }
 
   body {
     margin-top: 30px;
-    background-color: var(--main-color);
+    background-color: var(--main-bg-color);
     font-family: 'Roboto';
   }
 
@@ -183,4 +174,16 @@ body::-webkit-scrollbar-thumb {
   .youtubeEmbed {
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .post-date {
+    font-style: italic;
+  }
+  
+  figcaption {
+    color: gray;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
   }
