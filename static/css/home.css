@@ -12,6 +12,8 @@
 
 .item_display {
   width: 60%;
+  display: flex;
+  align-items: center;
 }
 
 .item_text {
