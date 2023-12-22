@@ -93,7 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 window.onload = function() {
-  setTimeout(function() {
-    openURL("./html/home.html");
-  }, 500);
+  // Only load window if iframe can be generated
+  if (window.innerWidth > 768) {
+    setTimeout(function() {
+      openURL("./html/home.html");
+    }, 500);
+  }
 };
