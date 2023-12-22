@@ -40,8 +40,9 @@ body {
 
 #profile-photo {
     width:50%; 
-    border-radius: 50%; 
+    border-radius: 50%;  
     margin-top: 20px;
+    margin-left: 10px;
 }
 
 #name {

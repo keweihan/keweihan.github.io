@@ -19,6 +19,7 @@
 .item_text {
   width: 40%;
   padding-left: 40px;
+  padding-top: 20px;
 }
 
 #center {
@@ -37,11 +38,13 @@ body {
     align-items: center;
     flex-direction: column !important;
     width: 100% !important;
+    gap: 10px;
   }
 
   .item_text {
     width: 100%;
     padding-left: 40px;
+    padding-top: 0px;
   }
 
   .item_display {
