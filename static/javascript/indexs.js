@@ -35,19 +35,28 @@ function openURL(url)
     }
     
     // Insert iframe browser and make wider 
-    $(document.getElementById("browser-wrapper")).velocity( 
-      {
-          width: "60%" 
-      },
-      { 
-          duration: 750, 
-          easing: [.17,.67,.22,.99],
-          begin: insertBrowser, 
-          complete: function setURL(){
-            changeSourceAndFadeIn(url);
-          },
-      }
-    );
+
+    var browser = document.getElementById("browser");
+    if (!browser) 
+    { // browser window is NOT open
+      $(document.getElementById("browser-wrapper")).velocity( 
+        {
+            width: "60%" 
+        },
+        { 
+            duration: 750, 
+            easing: [.17,.67,.22,.99],
+            begin: insertBrowser, 
+            complete: function setURL(){
+              changeSourceAndFadeIn(url);
+            },
+        }
+      );
+    }
+    else
+    {
+        changeSourceAndFadeIn(url);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
