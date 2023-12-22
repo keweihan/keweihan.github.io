@@ -1,3 +1,3 @@
 # keweihan.github.io
 
-Kewei Han's personal static website, made from scratch with no templates.
+Kewei Han's personal static website, made from scratch with no templates. Deployed at keweihan.com.
