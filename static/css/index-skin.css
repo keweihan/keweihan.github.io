@@ -1,6 +1,6 @@
 /* Properties for a different appearance for index page */
 body {
-    background-color: rgb(130, 158, 167) !important; 
+    background-color: rgb(130, 158, 167); 
 }
 
 #browser-wrapper {
@@ -22,4 +22,11 @@ body {
 
      /* Shadow */
      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(41, 54, 71); 
+    }
 }

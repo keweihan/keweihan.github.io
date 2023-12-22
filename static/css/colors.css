@@ -1,0 +1,20 @@
+:root {
+    --main-bg-color: white;
+    --main-text-color : black;
+  
+    --link-text-normal-color: rgb(83, 83, 83);
+    --pressed-button-color: rgb(110, 122, 124);
+    --pressed-text-color: white;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg-color: rgb(37, 37, 37);
+        --main-text-color : white;
+      
+        --link-text-normal-color: rgb(255, 255, 255);
+        --pressed-button-color: rgb(177, 196, 199);
+        --pressed-text-color: rgb(0, 0, 0);
+    }
+}

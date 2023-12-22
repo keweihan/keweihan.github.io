@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
-:root {
-  --main-bg-color: white;
-  --main-text-color : black;
-
-  /* Links */
-  --link-text-normal-color: rgb(83, 83, 83);
-  --pressed-button-color: rgb(110, 122, 124);
-  --pressed-text-color: white;
-}
+@import url('colors.css');
 
 video {
   background-image: url('../../files/loading.gif');
@@ -71,6 +62,8 @@ body::-webkit-scrollbar {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
 body::-webkit-scrollbar-track {
@@ -111,7 +104,7 @@ body::-webkit-scrollbar-thumb {
  /* unvisited link */
  a:link {
     font-weight: normal;
-    color: rgb(83, 83, 83);
+    color: var(--link-text-normal-color);
     transition: 0.15s;
     text-decoration: none;
   }
@@ -119,7 +112,7 @@ body::-webkit-scrollbar-thumb {
   /* visited link */
   a:visited {
     font-weight: normal;
-    color: rgb(83, 83, 83);
+    color: var(--link-text-normal-color);
     transition: 0.15s;
     text-decoration: none;
   }
