@@ -111,6 +111,10 @@ button {
   font-family: 'Roboto';
 }
 
+hr {
+  color:var(--divider-color);
+}
+
 /* ============
    Page elements styling
    ============ */
