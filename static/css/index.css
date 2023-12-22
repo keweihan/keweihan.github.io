@@ -6,8 +6,36 @@ iframe::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
+/* ============
+   Link hub styles
+   ============ */
+
 body {
     margin-top: 0px;
+}
+
+#flex-wrapper {
+    display: flex;
+    margin: auto;
+    padding-top: 70px;
+    width: 100%;
+    height: 100%; 
+    justify-content: center;
+}
+
+#bar {
+    width: 2px;
+    background-color: var(--divider-color);
+    border-radius: 10px;
+}
+
+#link-hub {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    padding-left: 20px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 #profile-photo {
@@ -21,7 +49,6 @@ body {
     margin-right: 20px;
 }
 
-
 .dropdown_content {
     display: flex;
     justify-content: center;
@@ -32,6 +59,31 @@ body {
 .dropdown_button:hover .dropdown_content {
     display: block;
 }
+
+.link-group {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+#link-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding-bottom: 30px;
+    margin-top: auto;
+}
+
+/* ============
+   Browser styling
+   ============ */
 
 #browser-wrapper {
     height: 85vh;
@@ -51,45 +103,9 @@ body {
     border: 0;
 }
 
-#flex-wrapper {
-    display: flex;
-    margin: auto;
-    padding-top: 70px;
-    width: 100%;
-    height: 100%; 
-    justify-content: center;
-}
-
-#link-hub {
-    font-family: 'Roboto', Helvetica, sans-serif;
-    padding-left: 20px;
-    background-color: var(--main-bg-color);
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-}
-
-#contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-    padding-bottom: 30px;
-    margin-top: auto;
-}
-
-.link-group {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    display: none;
-}
-
-#link-list {
-    display: flex;
-    flex-direction: column;
-    
-}
+/* ============
+   Mobile
+   ============ */
 
 /* Small screen */
 @media only screen and (max-width: 768px) {  
@@ -114,8 +130,3 @@ body {
     }
 }
 
-#bar {
-    width: 2px;
-    background-color: var(--divider-color);
-    border-radius: 10px;
-}
