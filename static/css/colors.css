@@ -14,19 +14,17 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .dark-mode {
-        --main-bg-color: rgb(26, 26, 26);
-        --main-text-color : white;
-        --divider-color : rgba(148, 148, 148, 0.4);
+.dark-mode {
+    --main-bg-color: rgb(26, 26, 26);
+    --main-text-color : white;
+    --divider-color : rgba(148, 148, 148, 0.4);
 
-        --skin-bg-color : rgb(41, 54, 71);
-    
-        --index-vertical-color : rgb(201, 201, 201, 0.1);
-      
-        --link-text-normal-color: rgb(201, 201, 201);
-        --pressed-button-color: rgb(177, 196, 199);
-        --pressed-text-color: rgb(0, 0, 0);
-    }
+    --skin-bg-color : rgb(41, 54, 71);
+
+    --index-vertical-color : rgb(201, 201, 201, 0.1);
+  
+    --link-text-normal-color: rgb(201, 201, 201);
+    --pressed-button-color: rgb(177, 196, 199);
+    --pressed-text-color: rgb(0, 0, 0);
 }
 
