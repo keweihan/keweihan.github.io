@@ -108,6 +108,8 @@ body {
     margin: 0;
     cursor: pointer;
     outline: none;
+
+    opacity: 40%;
 }
 
 /* ============
