@@ -122,7 +122,9 @@ body {
     max-height: 10%;
     text-align: left;
     overflow: hidden;
-    background: url('../../files/loading.gif') center center no-repeat;
+    
+    background: url('../../files/icons/loading.svg') center center no-repeat;
+    background-size: 40px 40px;
     background-color: var(--main-bg-color);
 
     margin-left: 25px;
