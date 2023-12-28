@@ -22,6 +22,7 @@ function iframeJS() {
             if(disableTransitions) {
                 this.document.body.classList.add('notransition');    
                 setTimeout(() => {
+                    console.log("HELLO?");
                     this.document.body.classList.remove('notransition');
                 }, 0.3);
             }

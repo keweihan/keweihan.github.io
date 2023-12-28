@@ -34,26 +34,32 @@ body {
 
 #qube-btn {
   background-color: #365e69;
+  border-color: #365e69;
 }
 
 #qube-btn:hover{
   background-color: #722528;
+  border-color: #722528;
 }
 
 #dd-btn {
   background-color: #1fab07;
+  border-color:#1fab07;
 }
 
 #dd-btn:hover{
   background-color: #157704;
+  border-color:#157704;
 }
 
 #warpball-btn {
   background-color: #a47082;
+  border-color:#a47082;
 }
 
 #warpball-btn:hover{
   background-color: #cc5699;
+  border-color:#cc5699;
 }
 
 

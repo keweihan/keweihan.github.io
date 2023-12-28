@@ -65,6 +65,12 @@ function openURL(url)
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    if(prefersDarkMode) {
+      toggleDarkMode(true);
+    }
+
+    resizeBrowser();
+  
     // Select all dropdown buttons
     var dropdowns = document.querySelectorAll('.dropbtn');
   
@@ -100,16 +106,25 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to toggle dark mode styles
 const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 var isDarkMode = false;
-function toggleDarkMode() {
+function toggleDarkMode(disableTransitions) {
+  // Temporarily disable transitions if indicated
+  if(disableTransitions) {
+      this.document.body.classList.add('notransition');
+      document.getElementById('link-hub').classList.add('notransition');
+      document.('links').classList.add('notransition');
+      setTimeout(() => {
+          this.document.body.classList.remove('notransition');
+          document.getElementById('link-hub').classList.remove('notransition');
+      }, 0.3);
+  }  
+
   isDarkMode = !isDarkMode;
-  const body = document.body;
-  toggleDarkModeInIframe();
-  body.classList.toggle('dark-mode');
+  document.body.classList.toggle('dark-mode');
+  toggleDarkModeInIframe(disableTransitions);
 }
 
 function toggleDarkModeInIframe(disableTransitions) {
   const iframe = document.getElementById('browser');
-  console.log(window.location.origin);
   iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
 }
 
@@ -132,8 +147,6 @@ window.onload = function() {
       openURL("./html/home.html");
     }, 500);
   }
-
-  resizeBrowser();
 };
 
 
