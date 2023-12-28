@@ -199,3 +199,13 @@ video {
   margin: 0 auto;
   border-radius: 10px;
 }
+
+/* ============
+   Utility styling
+   ============ */
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}

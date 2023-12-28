@@ -10,6 +10,7 @@ function insertBrowser()
     } 
 }
 
+// Change display of iframe browser
 function changeSourceAndFadeIn(newUrl) {
   document.getElementById("browser").src = newUrl;
   document.getElementById("browser").style.opacity = 0;
@@ -26,7 +27,7 @@ function changeSourceAndFadeIn(newUrl) {
 
     if(isDarkMode) 
     {
-      toggleDarkModeInIframe();
+      toggleDarkModeInIframe(true);
     }
   }
 }
@@ -106,10 +107,10 @@ function toggleDarkMode() {
   body.classList.toggle('dark-mode');
 }
 
-function toggleDarkModeInIframe() {
+function toggleDarkModeInIframe(disableTransitions) {
   const iframe = document.getElementById('browser');
   console.log(window.location.origin);
-  iframe.contentWindow.postMessage("toggleDarkMode", window.location.origin);
+  iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
 }
 
 window.onload = function() {
