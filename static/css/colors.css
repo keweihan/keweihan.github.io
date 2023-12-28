@@ -4,6 +4,8 @@
     --main-text-color : black;
     --divider-color : rgb(201, 201, 201, 0.4);
 
+    --skin-bg-color : rgb(130, 158, 167);
+
     --index-vertical-color : rgb(201, 201, 201, 0.4);
   
     --link-text-normal-color: rgb(83, 83, 83);
@@ -17,6 +19,8 @@
         --main-bg-color: rgb(26, 26, 26);
         --main-text-color : white;
         --divider-color : rgba(148, 148, 148, 0.4);
+
+        --skin-bg-color : rgb(41, 54, 71);
     
         --index-vertical-color : rgb(201, 201, 201, 0.1);
       

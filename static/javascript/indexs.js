@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Function to toggle dark mode styles
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 var isDarkMode = false;
 function toggleDarkMode() {
   isDarkMode = !isDarkMode;

@@ -1,10 +1,11 @@
 /* Properties for a different appearance for index page */
 body {
-    background-color: rgb(130, 158, 167); 
+    background-color: var(--skin-bg-color); 
 }
 
 #browser-wrapper {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 #browser {
@@ -17,16 +18,14 @@ body {
     box-shadow: 4px;
 
      /* Rounded corners */
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    /* border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; */
+    border-radius: 20px;
 
      /* Shadow */
      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: rgb(41, 54, 71); 
-    }
+#bar {
+    display: none;
 }

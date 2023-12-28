@@ -31,6 +31,7 @@ body {
 
 #link-hub {
     font-family: 'Roboto', Helvetica, sans-serif;
+    height: min-content;
     padding-left: 20px;
     background-color: var(--main-bg-color);
     display: flex;
@@ -78,6 +79,7 @@ body {
     justify-content: center;
     gap: 20px;
 
+    padding-top: 15px;
     padding-bottom: 30px;
     margin-top: auto;
 }
@@ -92,7 +94,6 @@ body {
     overflow: hidden;
     background: url('../../files/loading.gif') center center no-repeat;
     background-color: var(--main-bg-color);
-    border-radius: 20px;
 
     margin-left: 25px;
 }
