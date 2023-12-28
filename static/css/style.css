@@ -21,7 +21,7 @@
 .link:hover, .link-external:hover {
     background-color: #8a8a8a;
     color: var(--pressed-text-color);
-    width: 200px !important;
+    width: 90% !important;
     cursor: default;
 }
 
