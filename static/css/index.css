@@ -109,7 +109,11 @@ body {
     cursor: pointer;
     outline: none;
 
-    opacity: 40%;
+}
+
+#darkmode-icon {
+    width:25px; 
+    opacity:40%;
 }
 
 /* ============
@@ -136,6 +140,8 @@ body {
     background-color: var(--main-bg-color);
     border: 0;
 }
+
+
 
 /* ============
    Mobile

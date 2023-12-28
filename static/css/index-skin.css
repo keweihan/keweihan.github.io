@@ -29,3 +29,9 @@ body {
 #bar {
     display: none;
 }
+
+#darkmode-icon {
+    width:25px; 
+    opacity:20%;
+    filter: brightness(1000%);
+}

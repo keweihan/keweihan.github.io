@@ -12,6 +12,7 @@ function insertBrowser()
 
 // Change display of iframe browser
 function changeSourceAndFadeIn(newUrl) {
+  openedUrl = newUrl;
   document.getElementById("browser").src = newUrl;
   document.getElementById("browser").style.opacity = 0;
   document.getElementById("browser").onload = function() {
@@ -37,6 +38,7 @@ function changeSourceAndFadeIn(newUrl) {
 }
 
 // OnClick() animation function
+var openedUrl;
 function openURL(url)
 {
     // If mobile
@@ -64,6 +66,10 @@ function openURL(url)
     }
     else
     {
+        // Do nothing if same source
+        if(document.getElementById("browser").src === url) {
+          return;
+        }       
         changeSourceAndFadeIn(url);
     }
 }
