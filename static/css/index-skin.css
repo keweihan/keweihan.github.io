@@ -30,8 +30,13 @@ body {
     display: none;
 }
 
-#darkmode-icon {
-    width:25px; 
+.settings-icon {
     opacity:20%;
     filter: brightness(1000%);
+    transition: 0.15s ease;
+}
+
+.settings-icon:hover {
+    width:20px; 
+    opacity:40%;
 }

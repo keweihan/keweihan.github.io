@@ -74,6 +74,15 @@ function openURL(url)
     }
 }
 
+function toggleSkin() {
+  var stylesheet = document.getElementById('skinStylesheet');
+  if (stylesheet.disabled) {
+      stylesheet.disabled = false;
+  } else {
+      stylesheet.disabled = true;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     if(prefersDarkMode) {
       toggleDarkModeIndex(true);

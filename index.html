@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./static/css/index.css">
 
     <!-- Include for different index page appearance -->
-    <link rel="stylesheet" href="./static/css/index-skin.css"> 
+    <link rel="stylesheet" href="./static/css/index-skin.css" id="skinStylesheet"> 
 
     <!-- JS -->
     <script src="./static/javascript/indexs.js"></script>
@@ -82,19 +82,22 @@
 
             <div id="contact-links">
                 <a href="https://www.linkedin.com/in/kewei-han/">
-                    <img src="./files/icons/linkedin.svg" style="width:20px;">
+                    <img src="./files/icons/linkedin.svg" class= "contact-icon">
                 </a>
                 <a href="https://github.com/keweihan">
-                    <img src="./files/icons/github.svg" style="width:20px;">
+                    <img src="./files/icons/github.svg" class= "contact-icon">
                 </a>
                 <a href="mailto:keweihan@andrew.cmu.edu">
-                    <img src="./files/icons/envelope-alt.svg" style="width:20px;">
+                    <img src="./files/icons/envelope-alt.svg" class= "contact-icon">
                 </a>
             </div>
         </div>
         <div id="settings">
             <button class="setting-button" onclick="toggleDarkMode();">
-                <img src="./files/icons/dark-mode.svg" id="darkmode-icon">
+                <img src="./files/icons/dark-mode.svg" class="settings-icon">
+            </button>
+            <button class="setting-button" onclick="toggleSkin();">
+                <img src="./files/icons/brush-alt.svg" class="settings-icon">
             </button>
         </div>
     </div>
