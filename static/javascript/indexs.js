@@ -23,6 +23,11 @@ function changeSourceAndFadeIn(newUrl) {
           easing: [.17,.67,.22,.99],
       }
     )
+
+    if(isDarkMode) 
+    {
+      toggleDarkModeInIframe();
+    }
   }
 }
 
@@ -35,7 +40,6 @@ function openURL(url)
     }
     
     // Insert iframe browser and make wider 
-
     var browser = document.getElementById("browser");
     if (!browser) 
     { // browser window is NOT open
@@ -92,6 +96,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+// Function to toggle dark mode styles
+var isDarkMode = false;
+function toggleDarkMode() {
+  isDarkMode = !isDarkMode;
+  const body = document.body;
+  toggleDarkModeInIframe();
+  body.classList.toggle('dark-mode');
+}
+
+function toggleDarkModeInIframe() {
+  const iframe = document.getElementById('browser');
+  console.log(window.location.origin);
+  iframe.contentWindow.postMessage("toggleDarkMode", window.location.origin);
+}
+
 window.onload = function() {
   // Only load window if iframe can be generated
   if (window.innerWidth > 768) {
@@ -100,3 +119,4 @@ window.onload = function() {
     }, 500);
   }
 };
+

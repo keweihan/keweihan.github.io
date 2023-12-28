@@ -13,11 +13,11 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    :root {
+    .dark-mode {
         --main-bg-color: rgb(26, 26, 26);
         --main-text-color : white;
         --divider-color : rgba(148, 148, 148, 0.4);
-
+    
         --index-vertical-color : rgb(201, 201, 201, 0.1);
       
         --link-text-normal-color: rgb(201, 201, 201);
@@ -25,3 +25,4 @@
         --pressed-text-color: rgb(0, 0, 0);
     }
 }
+
