@@ -66,7 +66,7 @@ function openURL(url)
 
 document.addEventListener('DOMContentLoaded', function () {
     if(prefersDarkMode) {
-      toggleDarkMode(true);
+      toggleDarkModeIndex(true);
     }
 
     resizeBrowser();
@@ -107,24 +107,28 @@ document.addEventListener('DOMContentLoaded', function () {
 const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 var isDarkMode = false;
 function toggleDarkMode(disableTransitions) {
+  toggleDarkModeIndex(disableTransitions);
+  isDarkMode = !isDarkMode;
+  toggleDarkModeInIframe(disableTransitions);
+}
+
+function toggleDarkModeIndex(disableTransitions) {
   // Temporarily disable transitions if indicated
   if(disableTransitions) {
-      this.document.body.classList.add('notransition');
-      document.getElementById('link-hub').classList.add('notransition');
-      setTimeout(() => {
-          this.document.body.classList.remove('notransition');
-          document.getElementById('link-hub').classList.remove('notransition');
-      }, 0.3);
-  }  
-
-  isDarkMode = !isDarkMode;
-  document.body.classList.toggle('dark-mode');
-  toggleDarkModeInIframe(disableTransitions);
+    this.document.body.classList.add('notransition');
+    document.getElementById('link-hub').classList.add('notransition');
+    setTimeout(() => {
+        this.document.body.classList.remove('notransition');
+        document.getElementById('link-hub').classList.remove('notransition');
+    }, 0.3);
+  } 
+  document.body.classList.toggle('dark-mode'); 
 }
 
 function toggleDarkModeInIframe(disableTransitions) {
   const iframe = document.getElementById('browser');
   if(iframe) {
+    console.log("called?");
     iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
   }
 }

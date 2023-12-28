@@ -17,16 +17,6 @@ function iframeJS() {
     document.head.insertAdjacentHTML("beforeend","<link rel='stylesheet' href='static/css/style-iframe.css'>")
     window.addEventListener('message', function (event) {
         if (event.origin === window.location.origin) {
-            // Temporarily disable transitions if indicated
-            var disableTransitions = event.data;
-            if(disableTransitions) {
-                this.document.body.classList.add('notransition');    
-                setTimeout(() => {
-                    console.log("HELLO?");
-                    this.document.body.classList.remove('notransition');
-                }, 0.3);
-            }
-
             document.body.classList.toggle('dark-mode');
         }
     });
@@ -39,12 +29,20 @@ function directJS() {
 
 // Temporarily disable animations
 function disableTransitions() {
-    const element = document.getElementById('yourElementId');
+    const element = document.body;
     const currentTransition = element.style.transition;
     element.style.transition = 'none';
   
     // Restore the original transition property value after a brief delay (e.g., 10 milliseconds)
     setTimeout(() => {
       element.style.transition = currentTransition;
-    }, 0.3);
-  }
+    }, 0.2);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(prefersDarkMode) {
+        disableTransitions();
+        document.body.classList.add('dark-mode');
+    }
+});
