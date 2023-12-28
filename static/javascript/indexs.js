@@ -15,16 +15,20 @@ function changeSourceAndFadeIn(newUrl) {
   document.getElementById("browser").src = newUrl;
   document.getElementById("browser").style.opacity = 0;
   document.getElementById("browser").onload = function() {
-    $(document.getElementById("browser")).velocity(
-      {
-        opacity: 1 
+    // Artificial delay to hide visual glitch (TODO: hacky fix.)
+    setTimeout(function() {
+      $(document.getElementById("browser")).velocity(
+        {
+          opacity: 1 
+        },
+        { 
+            duration: 750, 
+            easing: [.17,.67,.22,.99],
+        }
+      )
       },
-      { 
-          duration: 750, 
-          easing: [.17,.67,.22,.99],
-      }
+      300
     )
-
     if(isDarkMode) 
     {
       toggleDarkModeInIframe(true);
