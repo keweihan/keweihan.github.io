@@ -113,6 +113,18 @@ function toggleDarkModeInIframe(disableTransitions) {
   iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
 }
 
+// Browser should not be shorter than link, but can be taller
+function resizeBrowser() {
+  const browserWrapper = document.getElementById('browser-wrapper');
+  const linkHub = document.getElementById('link-hub');
+
+  browserWrapper.style.minHeight = `${linkHub.clientHeight}px`;
+}
+
+window.addEventListener('resize', function() {
+  resizeBrowser();
+});
+
 window.onload = function() {
   // Only load window if iframe can be generated
   if (window.innerWidth > 768) {
@@ -120,5 +132,9 @@ window.onload = function() {
       openURL("./html/home.html");
     }, 500);
   }
+
+  resizeBrowser();
 };
+
+
 
