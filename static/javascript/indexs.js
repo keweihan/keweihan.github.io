@@ -111,7 +111,6 @@ function toggleDarkMode(disableTransitions) {
   if(disableTransitions) {
       this.document.body.classList.add('notransition');
       document.getElementById('link-hub').classList.add('notransition');
-      document.('links').classList.add('notransition');
       setTimeout(() => {
           this.document.body.classList.remove('notransition');
           document.getElementById('link-hub').classList.remove('notransition');
@@ -125,7 +124,9 @@ function toggleDarkMode(disableTransitions) {
 
 function toggleDarkModeInIframe(disableTransitions) {
   const iframe = document.getElementById('browser');
-  iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
+  if(iframe) {
+    iframe.contentWindow.postMessage(disableTransitions, window.location.origin);
+  }
 }
 
 // Browser should not be shorter than link, but can be taller
