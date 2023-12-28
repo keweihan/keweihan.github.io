@@ -31,7 +31,7 @@ body {
 }
 
 .settings-icon {
-    opacity:20%;
+    opacity:30%;
     filter: brightness(1000%);
     transition: 0.15s ease;
 }
