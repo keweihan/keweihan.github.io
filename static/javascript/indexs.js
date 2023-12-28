@@ -28,7 +28,7 @@ function changeSourceAndFadeIn(newUrl) {
         }
       )
       },
-      300
+      90
     )
     if(isDarkMode) 
     {

@@ -14,7 +14,7 @@
     font-size: 14px;
     margin: 1px 1px;
     text-indent: 5px;
-    transition: 0.3s ease;
+    transition: 0.15s ease;
     width: 100%;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .link:focus {
-  transition: 0.3s;
+  transition: 0.15s;
   width: 100%;
   background-color:var(--pressed-button-color);
   color: var(--pressed-text-color);
@@ -73,7 +73,7 @@ html {
   /* --scrollbarBG: #CFD8DC; */
   --thumbBG: #90A4AE;
   color: var(--main-text-color);
-  transition: 0.3s ease;
+  transition: 0.15s ease;
 }
 
 body {
@@ -190,7 +190,7 @@ figcaption {
 }
 
 video {
-  background-image: url('../../files/loading.gif');
+  background-image: url('../../files/icons/loading.svg') center center no-repeat;
   background-repeat: no-repeat;
   background-size: 30px 30px;
   background-position: center;

@@ -38,7 +38,7 @@ body {
     justify-content: space-evenly;
     flex-direction: column;
 
-    transition: 0.3s ease;
+    transition: 0.15s ease;
 }
 
 #profile-photo {
@@ -130,6 +130,7 @@ body {
     background: url('../../files/icons/loading.svg') center center no-repeat;
     background-size: 40px 40px;
     background-color: var(--main-bg-color);
+    transform: translate3d(0, 0, 0);
 
     margin-left: 25px;
 }
