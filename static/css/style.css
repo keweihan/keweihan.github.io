@@ -14,7 +14,7 @@
     font-size: 14px;
     margin: 1px 1px;
     text-indent: 5px;
-    transition: 0.3s;
+    transition: 0.3s ease;
     width: 100%;
 }
 
@@ -68,18 +68,12 @@ a:active {
 /* ============
    General Global Styles
    ============ */
-#center {
-  align-content: center;
-  font-family: 'Roboto', Helvetica, sans-serif;
-  text-align: left;
-  background-color: var(--main-bg-color);
-}
-
 html {
   /* scrollbar customization (Chrome) */
   /* --scrollbarBG: #CFD8DC; */
   --thumbBG: #90A4AE;
   color: var(--main-text-color);
+  transition: 0.3s ease;
 }
 
 body {
@@ -92,7 +86,16 @@ body {
   background-color: var(--main-bg-color);
   font-family: 'Roboto';
 
-  /* font-weight: 300; */
+  transition: inherit;
+}
+
+#center {
+  align-content: center;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  text-align: left;
+  background-color: var(--main-bg-color);
+
+  transition: inherit;
 }
 
 h2 {

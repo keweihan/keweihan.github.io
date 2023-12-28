@@ -37,6 +37,8 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+
+    transition: 0.3s ease;
 }
 
 #profile-photo {
@@ -72,6 +74,8 @@ body {
 #link-list {
     display: flex;
     flex-direction: column;
+
+    transition: inherit;
 }
 
 #contact-links {
