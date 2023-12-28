@@ -26,73 +26,77 @@
 <body>
 <div id="flex-wrapper"> 
     <div id = "bar"></div>
-    <div id="link-hub">
+    <div id = "left-column">
+        <div id="link-hub">
+            <img id="profile-photo" src="files/profile_alt.jpg">
+
+            <div id="name">
+                <h2 style="font-weight: 500; margin-bottom: 0px">Kevin Han</h2>
+                <p> 
+                    Master's of Software Engineering student <br> Carnegie Mellon University, Pittsburgh
+                </p>
+            </div>
         
-        <img id="profile-photo" src="files/profile_alt.jpg">
+            <div style="margin-left: 20px; margin-right: 20px;">
+                <nav id="link-list">
+                    <button onclick="openURL('./html/home.html')" class="link">Home</button>
+                    <button onclick="openURL('./files/KeweiHan_Resume.pdf')" class="link">Resume</button>
 
-        <div id="name">
-            <h2 style="font-weight: 500; margin-bottom: 0px">Kevin Han</h2>
-            <p> 
-                Master's of Software Engineering student <br> Carnegie Mellon University, Pittsburgh
-            </p>
-        </div>
-    
-        <div style="margin-left: 20px; margin-right: 20px;">
-            <nav id="link-list">
-                <button onclick="openURL('./html/home.html')" class="link">Home</button>
-                <button onclick="openURL('./files/KeweiHan_Resume.pdf')" class="link">Resume</button>
-
-                <hr style="width:100%;">
-                <button class="link dropbtn" data-target="vr-ar-dropdown">VR/AR          </button>
-                <div id="vr-ar-dropdown" class="link-group">
-                    <li><button onclick="openURL('./html/orbit-vr.html')"          class="link">OrbitVR</button></li>
-                    <li><button onclick="openURL('./html/aa-go.html')"          class="link">Ann Arbor Go!</button></li>
-                    <li><button onclick="openURL('./html/cse-simulator.html')"          class="link">Computer Lab Simulator</button></li>
-                </div>
-                
-                <hr style="width:100%;">
-                <button class="link dropbtn" data-target="wolverinesoft-dropdown">WolverineSoft          </button>
-                <div id="wolverinesoft-dropdown" class="link-group">
-                    <button onclick="openURL('./html/drift.html')"          class="link">Curse of the Corsair</button>
-                    <button onclick="openURL('./html/circuitry.html')"          class="link">Circuitry</button>
-                </div>
-                
-                <hr style="width:100%;">
-                <button class="link dropbtn" data-target="game-proj-dropdown"> Games          </button>
-                <div id="game-proj-dropdown" class="link-group">
-                    <button onclick="openURL('./html/desktopDefenders.html')"   class="link">Desktop Defender       </button>
-                    <button onclick="openURL('./html/qube.html')"              class="link">QUBE                   </button>
-                    <button onclick="openURL('./html/494-metroid.html')"         class="link">Gravity Metroid        </button>
-                    <button onclick="openURL('./html/warpball.html')"           class="link">Warpball               </button>
-                </div>
-                
-                <hr style="width:100%;">
-                <button class="link dropbtn" data-target="academic-dropdown"> Academic          </button>
-                <div id="academic-dropdown" class="link-group">
-                    <button onclick="openURL('./html/insta485-demo.html')" class="link">Insta485 </button>
-                    <div class="link-external">
-                        <a href="https://devpost.com/software/tehuantepec" style="cursor: default;">YHacks 2019</a>
+                    <hr style="width:100%;">
+                    <button class="link dropbtn" data-target="vr-ar-dropdown">VR/AR          </button>
+                    <div id="vr-ar-dropdown" class="link-group">
+                        <li><button onclick="openURL('./html/orbit-vr.html')"          class="link">OrbitVR</button></li>
+                        <li><button onclick="openURL('./html/aa-go.html')"          class="link">Ann Arbor Go!</button></li>
+                        <li><button onclick="openURL('./html/cse-simulator.html')"          class="link">Computer Lab Simulator</button></li>
                     </div>
-                    <button onclick="openURL('./html/mrads-semiconductor.html')" class="link">Nanomaterial Semiconductor research </button>
-                    <button onclick="toggleDarkMode();"           class="link">Darkmode               </button>
-                </div>
-                <hr style="width:100%;">
-            </nav>
-        </div>
+                    
+                    <hr style="width:100%;">
+                    <button class="link dropbtn" data-target="wolverinesoft-dropdown">WolverineSoft          </button>
+                    <div id="wolverinesoft-dropdown" class="link-group">
+                        <button onclick="openURL('./html/drift.html')"          class="link">Curse of the Corsair</button>
+                        <button onclick="openURL('./html/circuitry.html')"          class="link">Circuitry</button>
+                    </div>
+                    
+                    <hr style="width:100%;">
+                    <button class="link dropbtn" data-target="game-proj-dropdown"> Games          </button>
+                    <div id="game-proj-dropdown" class="link-group">
+                        <button onclick="openURL('./html/desktopDefenders.html')"   class="link">Desktop Defender       </button>
+                        <button onclick="openURL('./html/qube.html')"              class="link">QUBE                   </button>
+                        <button onclick="openURL('./html/494-metroid.html')"         class="link">Gravity Metroid        </button>
+                        <button onclick="openURL('./html/warpball.html')"           class="link">Warpball               </button>
+                    </div>
+                    
+                    <hr style="width:100%;">
+                    <button class="link dropbtn" data-target="academic-dropdown"> Academic          </button>
+                    <div id="academic-dropdown" class="link-group">
+                        <button onclick="openURL('./html/insta485-demo.html')" class="link">Insta485 </button>
+                        <div class="link-external">
+                            <a href="https://devpost.com/software/tehuantepec" style="cursor: default;">YHacks 2019</a>
+                        </div>
+                        <button onclick="openURL('./html/mrads-semiconductor.html')" class="link">Nanomaterial Semiconductor research </button>
+                    </div>
+                    <hr style="width:100%;">
+                </nav>
+            </div>
 
-        <div id="contact-links">
-            <a href="https://www.linkedin.com/in/kewei-han/">
-                <img src="./files/icons/linkedin.svg" style="width:20px;">
-            </a>
-            <a href="https://github.com/keweihan">
-                <img src="./files/icons/github.svg" style="width:20px;">
-            </a>
-            <a href="mailto:keweihan@andrew.cmu.edu">
-                <img src="./files/icons/envelope-alt.svg" style="width:20px;">
-            </a>
+            <div id="contact-links">
+                <a href="https://www.linkedin.com/in/kewei-han/">
+                    <img src="./files/icons/linkedin.svg" style="width:20px;">
+                </a>
+                <a href="https://github.com/keweihan">
+                    <img src="./files/icons/github.svg" style="width:20px;">
+                </a>
+                <a href="mailto:keweihan@andrew.cmu.edu">
+                    <img src="./files/icons/envelope-alt.svg" style="width:20px;">
+                </a>
+            </div>
+        </div>
+        <div id="settings">
+            <button class="setting-button" onclick="toggleDarkMode();">
+                <img src="./files/icons/dark-mode.svg" style="width:20px;">
+            </button>
         </div>
     </div>
-
     <div id="browser-wrapper">
         <!-- JavaScript inserted iframe with id #browser-->
     </div>
