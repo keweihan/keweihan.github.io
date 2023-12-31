@@ -1,3 +1,3 @@
 # keweihan.github.io
 
-Kewei Han's personal static website. Deployed at [keweihan.com](https://keweihan.com).
+Kevin's custom personal static website. Created and designed by Kevin Han. Deployed at [keweihan.com](https://keweihan.com).
