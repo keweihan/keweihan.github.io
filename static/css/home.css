@@ -10,16 +10,25 @@
   gap: 40px;
 }
 
+.item-tech {
+  margin-top:0px;
+  margin-bottom: 10px;
+}
+
 .item_display {
   width: 60%;
   display: flex;
   align-items: center;
 }
 
-.item_text {
+.item-info {
   width: 40%;
   padding-left: 40px;
   padding-top: 20px;
+}
+
+.item-desc {
+  margin-bottom: 10px;
 }
 
 #center {
@@ -32,7 +41,7 @@
 }
 
 #description {
-  margin: 20px;
+  margin: 5px;
 }
 
 body {
@@ -80,7 +89,7 @@ body {
     gap: 10px;
   }
 
-  .item_text {
+  .item-info {
     width: 100%;
     padding-left: 0px;
     padding-top: 0px;
@@ -107,7 +116,7 @@ body {
     order: 1; /* Video first for odd items */
   }
   
-  .item:nth-child(odd) .item_text {
+  .item:nth-child(odd) .item-info {
     order: 2; /* Text second for odd items */
   }
   
@@ -115,7 +124,7 @@ body {
     order: 2; /* Video second for even items */
   }
   
-  .item:nth-child(even) .item_text {
+  .item:nth-child(even) .item-info {
     order: 1; /* Text first for even items */
   }
 }
