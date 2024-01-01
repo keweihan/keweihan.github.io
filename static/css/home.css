@@ -24,7 +24,6 @@
 
 #center {
   margin: 30px;
-  margin-right: 90px;
 }
 
 body {
@@ -74,7 +73,7 @@ body {
 
   .item_text {
     width: 100%;
-    padding-left: 40px;
+    padding-left: 0px;
     padding-top: 0px;
   }
 
@@ -84,6 +83,11 @@ body {
 
   #item_list {
     justify-content: center;
+  }
+
+  #center {
+    margin-right: 0px;
+    margin: 0px
   }
   
 }

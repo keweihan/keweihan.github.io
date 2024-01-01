@@ -12,6 +12,7 @@ iframe::-webkit-scrollbar {
 
 body {
     margin-top: 0px;
+    background-color: var(--main-bg-color);
 }
 
 #flex-wrapper {
@@ -164,6 +165,10 @@ body {
 
 /* Small screen */
 @media only screen and (max-width: 768px) {  
+    body, html {
+        overflow-x: hidden;
+    }
+
     #link-hub {
         width: 80vw !important;
         margin-left: 10vw;
@@ -172,6 +177,14 @@ body {
 
     #browser-wrapper {
         display: none;
+    }
+
+    #flex-wrapper {
+        padding-top: 5vh;
+    }
+
+    #settings {
+        padding-bottom: 5vh;
     }
   }
 
