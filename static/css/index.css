@@ -42,7 +42,7 @@ body {
 }
 
 #profile-photo {
-    width:50%; 
+    width:170px; 
     border-radius: 50%;  
     margin-top: 20px;
     margin-left: 10px;
@@ -165,7 +165,9 @@ body {
 /* Small screen */
 @media only screen and (max-width: 768px) {  
     #link-hub {
-        width: 90vw !important;
+        width: 80vw !important;
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 
     #browser-wrapper {
