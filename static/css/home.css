@@ -26,6 +26,15 @@
   margin: 30px;
 }
 
+#title {
+  margin: 20px;
+  margin-top: 5px;
+}
+
+#description {
+  margin: 20px;
+}
+
 body {
   display: flex;
   justify-content: center;

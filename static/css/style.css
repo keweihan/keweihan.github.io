@@ -182,6 +182,14 @@ hr {
   font-style: italic;
 }
 
+#title {
+  margin-left: 10px;
+}
+
+#description {
+  margin: 10px;
+}
+
 figcaption {
   color: gray;
   font-style: italic;

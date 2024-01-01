@@ -18,8 +18,8 @@ body {
 #flex-wrapper {
     display: flex;
     margin: auto;
-    padding-top: 70px;
-    width: 100%;
+    padding-top: 5vh;
+    width: 95%;
     height: min-content; 
     justify-content: center;
 }
