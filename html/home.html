@@ -34,6 +34,7 @@
   
     <div id="item_list" style="margin: 20px;">
         
+
         <div class="item">
             <div class="item_display">
                 <figure>
@@ -55,6 +56,30 @@
                 </div>
                 <a href="./html/qube.html">
                     <button type="button" class="btn btn-dark" id="qube-btn">Learn more</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item_display">
+                <figure>
+                    <video autoplay muted loop playsinline style="box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);">
+                    <source src="files/pong/pongDemoWide.mp4" type="video/mp4" poster="files/alpha_1px.png" >
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+            </div>
+            <div class="item-info">
+                <h3> SimpleECS </h3>
+                <div class="item-tech">
+                    <span class="badge rounded-pill bg-secondary">C++</span>
+                </div>
+                <div class="item-desc"> 
+                    Personal game framework implementing Entity Component System built on top of SDL.
+                    Used to implement Pong and intended as a sandbox for practicing game programming. 
+                </div>
+                <a href="./html/qube.html">
+                    <button type="button" class="btn btn-dark" id="ecs-btn">Learn more</button>
                 </a>
             </div>
         </div>
@@ -99,7 +124,7 @@ desktopDefenders.html">
             <div class="item-info">
                 <h3> OrbitVR </h3>
                 <div class="item-tech">
-                    <span class="badge rounded-pill bg-secondary">C++ Blueprint</span>
+                    <span class="badge rounded-pill bg-secondary">Unreal Blueprint</span>
                     <span class="badge rounded-pill bg-secondary">Unreal Engine</span>
                 </div>
                 <div class="item-desc"> 
@@ -137,7 +162,9 @@ desktopDefenders.html">
                 </a>
             </div>
         </div>
-        <h3 style="align-self: center; color:rgb(143, 143, 143); font-style:italic"> More of my projects in the sidebar </h3>
+
+        <button type="button" class="btn btn-dark" onclick="removeBrowser()"> More projects in sidebar </button>
+        <br>
     </div>
     
 </div>
