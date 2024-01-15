@@ -18,12 +18,12 @@
 <body>
 
 <div id="center">
-    <figure width="100%">
+    <!-- <figure width="100%">
         <video autoplay muted loop playsinline height="auto" width="100%" style="width: 50%;">
         <source src="files/pong/pongDemo.mp4" type="video/mp4" poster="files/alpha_1px.png">
             Your browser does not support the video tag.
         </video>
-    </figure>
+    </figure> -->
 
     <div id="title" >
         <h2>SimpleECS</h2>
@@ -44,17 +44,43 @@
             </div>
         </p>
 
-        <b>
+        <p>
+            <h3>Development Log</h3>
             <hr>
-            <h2>Development Log</h2>
-
             <div class="link">
-                <a href="files/pong/Hiding Implementation in Libraries.html">Hiding implementation 1/5/24</a>
+                <a href="html/simpleECS/Optimizing Collisions.html">Optimizing Collisions 1/15/24</a>
             </div>
-        </b>
+            <div class="link">
+                <a href="html/simpleECS/Hiding Implementation in Libraries.html">Hiding implementation 1/5/24</a>
+            </div>
+        </p>    
         
-        <hr>
+        <p>
+            <h3>Reel</h3>
+            <hr>
+            
+            <div class = "clips">
+                <div class="clip-wrapper">
+                    <video autoplay muted loop playsinline poster="files/alpha_1px.png">
+                    <source src="files/pong/pongDemoWide.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="clip-caption">
+                        C++ Pong implementation using SimpleECS
+                    </div>
+                </div>
         
+                <div class="clip-wrapper">
+                    <video autoplay muted loop playsinline poster="files/alpha_1px.png">
+                    <source src="files/pong/9000_opt.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="clip-caption">
+                        SimpleECS simulating over 9000 collision agents at ~60fps
+                    </div>
+                </div>
+            </div>
+        </p>  
     </div>
 </div>
 
