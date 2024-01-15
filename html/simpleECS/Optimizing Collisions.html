@@ -267,8 +267,8 @@ visually see any potential improvements.</p>
       <img src="../../files/pong/3_TestScene.png">
   </div>
 </div>
-<p>In a scene with a mere ~400 agents, frame rate struggles at 30 fps
-where in a 3 agent scene framerate reachs upwards of 3000fps. We can
+<p>A 3 agent scene's framerate reachs upwards of 3000fps. However this quickly declines as agents are introduced.
+  In a scene with a mere ~400 agents, frame rate struggles at 30 fps. We can
 also observe bugs in the collision resolution causing objects to stick
 together.</p>
 <div style="display:flex; justify-content:center; flex-direction:column; align-items:center">
@@ -290,10 +290,10 @@ together.</p>
 </div>
 <h3 id="spatial-grid-implementation">Spatial Grid Implementation</h3>
 <p>To significantly reduce the amount of collision checks necessary I
-implemented a coarse grid whereby the screen is split into multiple grid
+implemented a coarse grid data structure whereby the screen is split into multiple grid
 cells each containing updated references to colliders that reside in
 that section of the screen (termed a “cell” in code snippits).</p>
-<p>While this adds slight overhead in needing to update a grid every
+<p>While this adds slight overhead in needing to update the grid every
 frame, it significantly decreases the number of collision checks
 necessary, as only colliders inside the same cell need to be checked
 against each other for potential collision.</p>
