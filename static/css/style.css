@@ -74,6 +74,8 @@ html {
   --thumbBG: #90A4AE;
   color: var(--main-text-color);
   transition: 0.15s ease;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -139,7 +141,7 @@ hr {
 }
 
 .clip-wrapper {
-  width: 90%;
+  width: 80%;
   /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
   border-radius: 10px;
   margin-bottom: 30px;

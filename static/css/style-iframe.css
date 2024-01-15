@@ -1,3 +1,9 @@
+body {
+    margin: 30px;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
 #wrapper {
     margin: auto;
     width: 80%;
@@ -6,7 +12,6 @@
 #center {
     padding: 0px 0;
     margin: 20px;
-    margin-right: 40px;
     width: 100%;
 }
 

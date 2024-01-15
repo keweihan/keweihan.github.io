@@ -14,6 +14,7 @@ function injectCSS() {
 }
 
 function iframeJS() {
+    console.log("sup");
     document.head.insertAdjacentHTML("beforeend","<link rel='stylesheet' href='static/css/style-iframe.css'>")
     window.addEventListener('message', function (event) {
         if (event.origin === window.location.origin) {
