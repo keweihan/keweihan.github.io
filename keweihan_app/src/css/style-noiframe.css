@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper {
+    margin: auto;
+    width: 50%;
+}
+
+#center {
+    /* padding: 70px 0; */
+    width: 40%;
+}
+
+video, img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px;
+
+    /* Center images and videos */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small screen */
+@media only screen and (max-width: 1065px) {
+    #center {
+        width: 90%;
+    }
+    
+    video, img {
+        width: 100%;
+    }
+}
+
+/* Large screen */
+@media only screen and (min-width: 1066px) {
+    #center {
+        width: 60%;
+    }
+
+    video, img {
+        width: 80%;
+    }
+}

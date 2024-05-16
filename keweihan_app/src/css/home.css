@@ -1,0 +1,130 @@
+#item_list {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.item-tech {
+  margin-top:0px;
+  margin-bottom: 10px;
+}
+
+.item_display {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.item-info {
+  width: 40%;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.item-desc {
+  margin-bottom: 10px;
+}
+
+/* #center {
+  margin: 30px;
+} */
+
+#title {
+  margin: 20px;
+  margin-top: 5px;
+}
+
+#description {
+  margin: 5px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#qube-btn {
+  background-color: #365e69;
+  border-color: #365e69;
+}
+
+#qube-btn:hover{
+  background-color: #722528;
+  border-color: #722528;
+}
+
+#dd-btn {
+  background-color: #1fab07;
+  border-color:#1fab07;
+}
+
+#dd-btn:hover{
+  background-color: #157704;
+  border-color:#157704;
+}
+
+#warpball-btn {
+  background-color: #a47082;
+  border-color:#a47082;
+}
+
+#warpball-btn:hover{
+  background-color: #cc5699;
+  border-color:#cc5699;
+}
+
+
+/* Small screen */
+@media only screen and (max-width: 768px) {    
+  .item {
+    align-items: center;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px;
+  }
+
+  .item-info {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .item_display {
+    width: 100%;
+  }
+
+  #item_list {
+    justify-content: center;
+  }
+
+  #center {
+    margin-right: 0px;
+    margin: 0px
+  }
+  
+}
+
+/* Large screen */
+@media only screen and (min-width: 769px) {
+  .item:nth-child(odd) .item_display {
+    order: 1; /* Video first for odd items */
+  }
+  
+  .item:nth-child(odd) .item-info {
+    order: 2; /* Text second for odd items */
+  }
+  
+  .item:nth-child(even) .item_display {
+    order: 2; /* Video second for even items */
+  }
+  
+  .item:nth-child(even) .item-info {
+    order: 1; /* Text first for even items */
+  }
+}

@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('colors.css');
+
+/* ============
+   Hoverable Links
+   ============ */
+.link, .link-external {
+    background-color: var(--main-bg-color);
+    border: none;
+    color: var(--link-text-normal-color);
+    padding: 8px 1px;
+    text-align: left;
+    font-size: 14px;
+    margin: 1px 1px;
+    text-indent: 5px;
+    transition: 0.15s ease;
+    width: 100%;
+}
+
+.link:hover, .link-external:hover {
+    background-color: #8a8a8a;
+    color: var(--pressed-text-color);
+    width: 90% !important;
+    cursor: default;
+}
+
+.link:focus {
+  transition: 0.15s;
+  width: 100%;
+  background-color:var(--pressed-button-color);
+  color: var(--pressed-text-color);
+}
+
+.link-external:hover, .link-external {
+  cursor: pointer;
+}
+
+a:link {
+  /* unvisited link */
+  font-weight: normal;
+  color: var(--link-text-normal-color);
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+a:visited {
+  /* visited link */
+  font-weight: normal;
+  color: var(--link-text-normal-color);
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+a:hover {
+  /* mouse over link */
+  font-weight: normal;
+  color: white;
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* ============
+   General Global Styles
+   ============ */
+html {
+  /* scrollbar customization (Chrome) */
+  /* --scrollbarBG: #CFD8DC; */
+  --thumbBG: #90A4AE;
+  color: var(--main-text-color);
+  transition: 0.15s ease;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+
+  margin-top: 30px;
+  background-color: var(--main-bg-color);
+  font-family: 'Roboto';
+
+  transition: inherit;
+}
+
+#center {
+  align-content: center;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  text-align: left;
+  background-color: var(--main-bg-color);
+
+  transition: inherit;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+button {
+  font-family: 'Roboto';
+}
+
+hr {
+  border: none;
+  color:var(--divider-color);
+  background-color: var(--divider-color);
+  height: 2px;
+}
+
+/* ============
+   Page elements styling
+   ============ */
+.clips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.clip-wrapper {
+  width: 80%;
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 10px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clip-caption {
+  padding: 6px;
+  color: gray;
+  font-style: italic;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.headerimage {
+  position : relative;
+}
+
+.headerimage:after {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  bottom   : 0;
+  left     : 0;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom, 
+                    rgba(255,255,255, 0), 
+                    var(--main-bg-color) 90%);
+  width    : 100%;
+  height   : 4em;
+}
+
+.youtubeEmbed {
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-date {
+  font-style: italic;
+}
+
+#title {
+  margin-left: 10px;
+}
+
+#description {
+  margin: 10px;
+}
+
+figcaption {
+  color: gray;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+  font-weight: 100;
+}
+
+video {
+  background-image: url('../files/icons/loading.svg') center center no-repeat;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+#itchio-link {
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 10px;
+}
+
+/* ============
+   Utility styling
+   ============ */
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+/* Small screen */
+@media only screen and (max-width: 768px) {  
+  figure {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
