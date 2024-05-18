@@ -81,7 +81,7 @@ body {
 
 
 /* Small screen */
-@media only screen and (max-width: 768px) {    
+@media only screen and (max-width: 1068px) {    
   .item {
     align-items: center;
     flex-direction: column !important;
@@ -111,7 +111,7 @@ body {
 }
 
 /* Large screen */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1069px) {
   .item:nth-child(odd) .item_display {
     order: 1; /* Video first for odd items */
   }

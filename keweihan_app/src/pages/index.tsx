@@ -1,10 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
-import '../css/index.css';
-import '../css/style.css';
+import Home from './home';
 
+import { useState } from 'react';
+
+import '../css/style.css';
+import '../css/index.css';
+import '../css/index-skin.css'
+
+// Assets
 import profilePhoto from '../files/profile.png';
 
+// Icons
 import linkedinIcon from '../files/icons/linkedin.svg';
 import githubIcon from '../files/icons/github.svg';
 import emailIcon from '../files/icons/envelope-alt.svg';
@@ -17,11 +23,12 @@ function openURL(url: string) {
 }
 
 function toggleDarkMode() {
-// Implement the function
+// TODO
+
 }
 
 function toggleSkin() {
-// Implement the function
+// TODO
 
 }
 
@@ -32,7 +39,7 @@ function Index() {
           <div id="bar"></div>
           <div id="left-column">
             <div id="link-hub">
-              <img id="profile-photo" src={profilePhoto} alt="Profile" />
+              {/* <img id="profile-photo" src={profilePhoto} alt="Profile" /> */}
     
               <div id="name">
                 <h2 style={{ fontWeight: 500, marginBottom: '0px' }}>Kevin Han</h2>
@@ -110,6 +117,11 @@ function Index() {
           </div>
           <div id="browser-wrapper">
             {/* JavaScript inserted iframe with id #browser */}
+            
+            <div id="browser" style={{padding : "50px", overflowY:"scroll"}}>
+              <Home />
+            </div>
+
           </div>
         </div>
       </div>

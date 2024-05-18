@@ -19,7 +19,7 @@ body {
     display: flex;
     margin: auto;
     padding-top: 5vh;
-    width: 95%;
+    width: 85vw;
     height: min-content; 
     justify-content: center;
 }
@@ -50,6 +50,13 @@ body {
 }
 
 #name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-size: 15px;
+    font-family: Roboto;
+    margin-top: 40px; 
     margin-left: 20px; 
     margin-right: 20px;
 }
