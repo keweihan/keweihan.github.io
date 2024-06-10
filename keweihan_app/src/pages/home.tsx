@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import { Button, Alert } from 'react-bootstrap';
+//import { Button, Alert } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css';

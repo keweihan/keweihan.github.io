@@ -55,42 +55,50 @@ function Index() {
                   <button onClick={() => openURL('./html/home.html')} className="link">Home</button>
                   <button onClick={() => openURL('./files/Kewei_Han_Resume.pdf')} className="link">Resume</button>
     
-                  <hr style={{ width: '100%' }} />
-                  <button className="link dropbtn" data-target="vr-ar-dropdown">VR/AR</button>
-                  <div id="vr-ar-dropdown" className="link-group">
-                    <li><button onClick={() => openURL('./html/orbit-vr.html')} className="link">OrbitVR</button></li>
-                    <li><button onClick={() => openURL('./html/aa-go.html')} className="link">Ann Arbor Go!</button></li>
-                    <li><button onClick={() => openURL('./html/cse-simulator.html')} className="link">Computer Lab Simulator</button></li>
-                  </div>
-    
-                  <hr style={{ width: '100%' }} />
-                  <button className="link dropbtn" data-target="wolverinesoft-dropdown">WolverineSoft</button>
-                  <div id="wolverinesoft-dropdown" className="link-group">
-                    <button onClick={() => openURL('./html/drift.html')} className="link">Curse of the Corsair</button>
-                    <button onClick={() => openURL('./html/circuitry.html')} className="link">Circuitry</button>
-                  </div>
-    
-                  <hr style={{ width: '100%' }} />
-                  <button className="link dropbtn" data-target="game-proj-dropdown">Games</button>
-                  <div id="game-proj-dropdown" className="link-group">
-                    <button onClick={() => openURL('./html/simpleECS.html')} className="link">SimpleECS</button>
-                    <button onClick={() => openURL('./html/otvl.html')} className="link">OTVL/AppStop</button>
-                    <button onClick={() => openURL('./html/desktopDefenders.html')} className="link">Desktop Defender</button>
-                    <button onClick={() => openURL('./html/qube.html')} className="link">QUBE</button>
-                    <button onClick={() => openURL('./html/494-metroid.html')} className="link">Gravity Metroid</button>
-                    <button onClick={() => openURL('./html/warpball.html')} className="link">Warpball</button>
-                  </div>
-    
-                  <hr style={{ width: '100%' }} />
-                  <button className="link dropbtn" data-target="academic-dropdown">Assorted</button>
-                  <div id="academic-dropdown" className="link-group">
-                    <button onClick={() => openURL('./html/insta485-demo.html')} className="link">Insta485</button>
-                    <div className="link-external">
-                      <a href="https://devpost.com/software/tehuantepec" style={{ cursor: 'default' }}>YHacks 2019</a>
+                  <div className='menuGroup'>
+                    <hr style={{ width: '100%' }} />
+                    <button className="link dropbtn" data-target="vr-ar-dropdown">VR/AR</button>
+                    <div id="vr-ar-dropdown" className="link-group">
+                      <li><button onClick={() => openURL('./html/orbit-vr.html')} className="link">OrbitVR</button></li>
+                      <li><button onClick={() => openURL('./html/aa-go.html')} className="link">Ann Arbor Go!</button></li>
+                      <li><button onClick={() => openURL('./html/cse-simulator.html')} className="link">Computer Lab Simulator</button></li>
                     </div>
-                    <button onClick={() => openURL('./html/mrads-semiconductor.html')} className="link">Nanomaterial Semiconductor research</button>
                   </div>
-                  <hr style={{ width: '100%' }} />
+
+                  <div className='menuGroup'>
+                    <hr style={{ width: '100%' }} />
+                    <button className="link dropbtn" data-target="wolverinesoft-dropdown">WolverineSoft</button>
+                    <div id="wolverinesoft-dropdown" className="link-group">
+                      <button onClick={() => openURL('./html/drift.html')} className="link">Curse of the Corsair</button>
+                      <button onClick={() => openURL('./html/circuitry.html')} className="link">Circuitry</button>
+                    </div>
+                  </div>
+
+                  <div className='menuGroup'>
+                    <hr style={{ width: '100%' }} />
+                    <button className="link dropbtn" data-target="game-proj-dropdown">Games</button>
+                    <div id="game-proj-dropdown" className="link-group">
+                      <button onClick={() => openURL('./html/simpleECS.html')} className="link">SimpleECS</button>
+                      <button onClick={() => openURL('./html/otvl.html')} className="link">OTVL/AppStop</button>
+                      <button onClick={() => openURL('./html/desktopDefenders.html')} className="link">Desktop Defender</button>
+                      <button onClick={() => openURL('./html/qube.html')} className="link">QUBE</button>
+                      <button onClick={() => openURL('./html/494-metroid.html')} className="link">Gravity Metroid</button>
+                      <button onClick={() => openURL('./html/warpball.html')} className="link">Warpball</button>
+                    </div>
+                  </div>
+
+                  <div className='menuGroup'>
+                    <hr style={{ width: '100%' }} />
+                    <button className="link dropbtn" data-target="academic-dropdown">Assorted</button>
+                    <div id="academic-dropdown" className="link-group">
+                      <button onClick={() => openURL('./html/insta485-demo.html')} className="link">Insta485</button>
+                      <div className="link-external">
+                        <a href="https://devpost.com/software/tehuantepec" style={{ cursor: 'default' }}>YHacks 2019</a>
+                      </div>
+                      <button onClick={() => openURL('./html/mrads-semiconductor.html')} className="link">Nanomaterial Semiconductor research</button>
+                    </div>
+                    <hr style={{ width: '100%' }} />
+                  </div>
                 </nav>
               </div>
     

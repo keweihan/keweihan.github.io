@@ -79,6 +79,12 @@ body {
     display: none;
 }
 
+.menuGroup:hover > .link-group {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 #link-list {
     display: flex;
     flex-direction: column;
