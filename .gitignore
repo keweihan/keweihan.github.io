@@ -1,3 +1,5 @@
 .DS_Store
 env/
 __pycache__/
+
+keweihan_app/node_modules
