@@ -1,4 +1,3 @@
-
 // Insert iframe if it doesn't already exist
 function insertBrowser()
 {
@@ -90,31 +89,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
     resizeBrowser();
   
+    // Helper: resolve the content element for a drop button.
+    function getContentForDropbtn(btn) {
+      var targetId = btn.getAttribute('data-target');
+      if (targetId) {
+        return document.getElementById(targetId);
+      }
+      // Fallback: next sibling with class 'link-group'
+      var next = btn.nextElementSibling;
+      if (next && next.classList && next.classList.contains('link-group')) {
+        return next;
+      }
+      // Last resort: search within parent for a .link-group
+      var parent = btn.parentElement;
+      if (parent) {
+        return parent.querySelector('.link-group');
+      }
+      return null;
+    }
+  
     // Select all dropdown buttons
-    var dropdowns = document.querySelectorAll('.dropbtn');
+    var dropdowns = Array.prototype.slice.call(document.querySelectorAll('.dropbtn'));
   
     dropdowns.forEach(function(dropbtn) {
-      dropbtn.addEventListener('click', function() {
-        // Get the target from the data attribute
-        var targetId = this.getAttribute('data-target');
-        var content = document.getElementById(targetId);
+      dropbtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        // Resolve content element for this dropbtn
+        var content = getContentForDropbtn(this);
+        if (!content) return;
         var $content = $(content);
   
         // Check if the dropdown is currently visible
         if ($content.is(':visible')) {
-          // Animate hiding
-          $content.velocity("slideUp");
+          // Animate hiding only this content (do not affect ancestors)
+          $content.velocity('slideUp');
         } else {
           // Animate showing
-          $content.velocity("slideDown");
+          $content.velocity('slideDown');
 
-          // Hide other dropdowns
+          // Hide other dropdowns, but do NOT hide ancestors of the opened content
           dropdowns.forEach(function(otherDropBtn) {
-            var otherTargetId = otherDropBtn.getAttribute('data-target');
-            if (otherTargetId !== targetId) {
-              var otherContent = document.getElementById(otherTargetId);
-              $(otherContent).velocity("slideUp");
-            }
+            if (otherDropBtn === dropbtn) return;
+            var otherContent = getContentForDropbtn(otherDropBtn);
+            if (!otherContent || otherContent === content) return;
+
+            // If otherContent is an ancestor of the content we're opening, keep it open.
+            if (otherContent.contains(content)) return;
+
+            // Otherwise hide it
+            $(otherContent).velocity('slideUp');
           });
         }
       });
