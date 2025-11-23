@@ -246,9 +246,10 @@ that are required to be referenced throughout the library. A
 throughout multiple SDL functions for graphics rendering. Planned
 components built on top of SDL like <code>SpriteRenderer</code> require
 ready access to them in order to render objects.</p>
-<p>First thought was to make them global, but as global variables are
-generally discouraged, I explored options to minimize scope to only the
-classes that would need them. Eventually it was decided to make
+<p>One way is to make global, but these may not be variables that are truly
+  ubiquitous throughout the entire codebase.
+    I explored options to minimize scope to only the
+classes that would need them. Eventually I decided to make
 variables effectively global for the time being as the options turned
 out fruitless and overcomplicated.</p>
 <h2 id="protected-static"> Protected Static</h2>
